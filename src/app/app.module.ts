@@ -13,6 +13,7 @@ import { LabelModule } from "@progress/kendo-angular-label";
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { IntlModule } from '@progress/kendo-angular-intl';
 import { IconsModule } from '@progress/kendo-angular-icons';
+import {HttpClientModule} from '@angular/common/http';
  
 
 @NgModule({
@@ -23,6 +24,7 @@ import { IconsModule } from '@progress/kendo-angular-icons';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     LayoutModule,
     PopupModule,
     LabelModule,

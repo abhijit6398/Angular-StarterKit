@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
+import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,8 +16,15 @@ export class SignupComponent {
     cnfPassword: new FormControl("",Validators.compose([Validators.required,Validators.minLength(8)]))
   });
 
+  constructor(private apis : GlobalService){}
+
   public submitForm(): void {
     this.registerForm.markAllAsTouched();
+    console.log(this.registerForm.value);
+    this.apis.usersPostApi(this.registerForm.value).subscribe((res)=>{
+      alert("Signup succefully");
+      this.registerForm.reset();
+    });
   }
 
   public clearForm(): void {

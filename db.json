@@ -1,9 +1,20 @@
 {
-    "users": [
-      { "id": 1, "title": "fake-server", "author": "Dinesh" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "users": [
+    {
+      "name": "asffd",
+      "phnNum": 1234567890,
+      "email": "absg@gam.com",
+      "password": "123456789",
+      "cnfPassword": "123456789",
+      "id": 1
+    },
+    {
+      "name": "disnesh",
+      "phnNum": 9876543210,
+      "email": "manjj@gnam.cosm",
+      "password": "987654321",
+      "cnfPassword": "987654321",
+      "id": 2
+    }
+  ]
+}
