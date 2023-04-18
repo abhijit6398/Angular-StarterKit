@@ -1,0 +1,52 @@
+<div class="example-wrap">
+    <form class="k-form" [formGroup]="registerForm">
+      <fieldset class="k-form-fieldset">
+        <legend class="k-form-legend">Signup Here</legend>
+
+        <kendo-formfield>
+            <kendo-label [for]="name" text="Full Name"></kendo-label>
+            <input type="text" formControlName="name" kendoTextBox #name required />
+  
+            <kendo-formhint>Your Full Name</kendo-formhint>
+        </kendo-formfield>
+        <kendo-formfield>
+            <kendo-label [for]="phnNum" text="Phone Number"></kendo-label>
+            <input type="number" formControlName="phnNum" kendoTextBox #phnNum required />
+  
+            <kendo-formhint>Your active phn num</kendo-formhint>
+            <kendo-formerror>Error: Not a valid num</kendo-formerror>
+        </kendo-formfield>
+        
+        <kendo-formfield>
+            <kendo-label [for]="email" text="Email"></kendo-label>
+            <input formControlName="email" kendoTextBox #email required />
+  
+            <kendo-formhint>Your active email</kendo-formhint>
+            <kendo-formerror>Error: Not valid email format</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+          <kendo-label [for]="password" text="Password"></kendo-label>
+          <input formControlName="password" kendoTextBox #password required />
+
+          <kendo-formhint>Your password</kendo-formhint>
+          <kendo-formerror>Error: Password is required</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+            <kendo-label [for]="cnfPassword" text="Confirm Password"></kendo-label>
+            <input formControlName="cnfPassword" kendoTextBox #cnfPassword required />
+  
+            <kendo-formhint>Your password</kendo-formhint>
+            <kendo-formerror>Error: Password is required</kendo-formerror>
+          </kendo-formfield>
+        <span>Already have account <a routerLink="/login">Click Here</a></span>
+
+        <div class="k-form-buttons">
+          <button kendoButton themeColor="primary" (click)="submitForm()">
+            Submit
+          </button>
+          <button kendoButton (click)="clearForm()">Clear</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
