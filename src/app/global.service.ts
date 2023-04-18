@@ -16,4 +16,12 @@ export class GlobalService {
     return this.http.post(`${this.apiUrl}/users`,data)
   }
 
+  todosGetApi(){
+    return this.http.get(`${this.apiUrl}/todos`)
+  }
+
+  todosPostApi(data:any){
+    return this.http.post(`${this.apiUrl}/todos`,data)
+  }
+
 }

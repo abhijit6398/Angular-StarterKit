@@ -1,0 +1,10 @@
+<div class="addButton">
+    <button kendoButton (click)="onButtonClick()" fillMode="outline">
+        Add Record
+    </button>
+</div>
+<kendo-grid [data]="gridData">
+    <kendo-grid-column field="id" title="ID"> </kendo-grid-column>
+    <kendo-grid-column field="title" title="Title"> </kendo-grid-column>
+    <kendo-grid-column field="description" title="Description"></kendo-grid-column>
+</kendo-grid>

@@ -1,20 +1,61 @@
 {
   "users": [
     {
-      "name": "asffd",
+      "name": "abhi",
       "phnNum": 1234567890,
-      "email": "absg@gam.com",
+      "email": "abc@gmail.com",
       "password": "123456789",
       "cnfPassword": "123456789",
       "id": 1
     },
     {
-      "name": "disnesh",
-      "phnNum": 9876543210,
-      "email": "manjj@gnam.cosm",
-      "password": "987654321",
-      "cnfPassword": "987654321",
+      "name": "dinesh",
+      "phnNum": 1234567890,
+      "email": "xyz@gmail.com",
+      "password": "12345678",
+      "cnfPassword": "12345678",
       "id": 2
+    },
+    {
+      "name": "dinesh",
+      "phnNum": 1234567890,
+      "email": "xyz@gmail.com",
+      "password": "12345678",
+      "cnfPassword": "12345678",
+      "id": 3
+    },
+    {
+      "name": "abhijit",
+      "phnNum": 7683850378,
+      "email": "",
+      "password": "",
+      "cnfPassword": "",
+      "id": 4
+    },
+    {
+      "name": "abhijit",
+      "phnNum": 7683850378,
+      "email": "abcd$%@gmail",
+      "password": "12345678",
+      "cnfPassword": "12345678",
+      "id": 5
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "title": "asdf",
+      "description": "sgvh dgd vdd h d d ghd"
+    },
+    {
+      "id": 2,
+      "title": "asdcdf",
+      "description": "sgvh dgdd vdd h d d ghd"
+    },
+    {
+      "id": 3,
+      "title": "asdfx",
+      "description": "sgvhx dgd vdd h d d ghd"
     }
   ]
 }

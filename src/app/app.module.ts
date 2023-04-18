@@ -14,6 +14,8 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { IntlModule } from '@progress/kendo-angular-intl';
 import { IconsModule } from '@progress/kendo-angular-icons';
 import {HttpClientModule} from '@angular/common/http';
+import { GridModule } from '@progress/kendo-angular-grid';
+
  
 
 @NgModule({
@@ -32,7 +34,8 @@ import {HttpClientModule} from '@angular/common/http';
     IntlModule,
     IconsModule,
     NavigationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    GridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,12 +10,18 @@
 
     <kendo-appbar-spacer width="32px"></kendo-appbar-spacer>
 
-      <kendo-appbar-section>
+      <kendo-appbar-section *ngIf="!authentiCated;then condition1 else condition2"></kendo-appbar-section>
+      <ng-template #condition1>
         <ul>
           <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
           <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li>
         </ul>
-      </kendo-appbar-section>
+      </ng-template>
+      <ng-template #condition2>
+        <ul>
+          <li><a (click)="signOut()">Signout</a></li>
+        </ul>
+      </ng-template>
 
     <kendo-appbar-spacer></kendo-appbar-spacer>
 </kendo-appbar>

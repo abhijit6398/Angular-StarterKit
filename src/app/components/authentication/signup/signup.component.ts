@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import { GlobalService } from 'src/app/global.service';
 
 @Component({
@@ -16,13 +17,13 @@ export class SignupComponent {
     cnfPassword: new FormControl("",Validators.compose([Validators.required,Validators.minLength(8)]))
   });
 
-  constructor(private apis : GlobalService){}
+  constructor(private apis : GlobalService,private route:Router){}
 
   public submitForm(): void {
     this.registerForm.markAllAsTouched();
-    console.log(this.registerForm.value);
     this.apis.usersPostApi(this.registerForm.value).subscribe((res)=>{
       alert("Signup succefully");
+      this.route.navigate(['/login']);
       this.registerForm.reset();
     });
   }

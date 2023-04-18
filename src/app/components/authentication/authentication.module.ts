@@ -21,6 +21,7 @@ import { ButtonsModule } from "@progress/kendo-angular-buttons";
     LabelModule,
     ButtonsModule,
     RouterModule.forChild([
+      // {path:'',redirectTo :'/login'},
       {path:'login',component:LoginComponent},
       {path:'signup',component:SignupComponent}
     ])
