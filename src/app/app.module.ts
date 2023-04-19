@@ -15,13 +15,18 @@ import { IntlModule } from '@progress/kendo-angular-intl';
 import { IconsModule } from '@progress/kendo-angular-icons';
 import {HttpClientModule} from '@angular/common/http';
 import { GridModule } from '@progress/kendo-angular-grid';
+import { MenuModule } from '@progress/kendo-angular-menu';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+
 
  
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,9 @@ import { GridModule } from '@progress/kendo-angular-grid';
     IconsModule,
     NavigationModule,
     BrowserAnimationsModule,
-    GridModule
+    GridModule,
+    MenuModule,
+    ButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

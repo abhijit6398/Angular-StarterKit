@@ -1,6 +1,9 @@
 body {
     background: #adadb1;
 }
+.navbar{
+    background-color:aquamarine ;
+}
 
 .logo {
     margin: 0 1rem;
