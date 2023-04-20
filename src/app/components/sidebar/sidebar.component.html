@@ -1,10 +1,10 @@
-<div class="sidebar-container">
-    <kendo-drawer-container>
+<div class="sidebar">
+    <kendo-drawer-container class="sidebar-container">
         <kendo-drawer [items]="items" mode="push" [mini]="true" [expanded]="expandable" (select)="onSelect($event)"
-            [autoCollapse]="false" [isItemExpanded]="isItemExpanded">
+            [autoCollapse]="false" [isItemExpanded]="isItemExpanded" class="sidebar-drawer">
         </kendo-drawer>
-        <kendo-drawer-content>
-            <h1>{{selected}}</h1>
+        <kendo-drawer-content class="sidebar-content">
+            <router-outlet></router-outlet>
         </kendo-drawer-content>
     </kendo-drawer-container>
 </div>
