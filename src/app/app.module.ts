@@ -13,14 +13,16 @@ import { LabelModule } from "@progress/kendo-angular-label";
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { IntlModule } from '@progress/kendo-angular-intl';
 import { IconsModule } from '@progress/kendo-angular-icons';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { MenuModule } from '@progress/kendo-angular-menu';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { InputsModule } from "@progress/kendo-angular-inputs";
+import { ButtonsModule } from "@progress/kendo-angular-buttons";
+import { NotificationModule } from '@progress/kendo-angular-notification';
+import { SharedModule } from './components/shared/shared.module';
 
 
- 
 
 @NgModule({
   declarations: [
@@ -42,7 +44,10 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
     BrowserAnimationsModule,
     GridModule,
     MenuModule,
-    ButtonsModule
+    ButtonsModule,
+    InputsModule,
+    NotificationModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component,OnChanges, ElementRef, EventEmitter, Output, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { AlertService } from 'src/app/Service/alert.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,10 +12,11 @@ export class NavbarComponent {
   public margin = { horizontal: -46, vertical: 7 };
   show :boolean =false;
   public kendokaAvatar = "https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png";
-
+  constructor(private route: Router, private alertService : AlertService ) { }
+  opened: boolean = false;
+  authentiCated!: boolean;
   @Output() toggle: EventEmitter<boolean> = new EventEmitter();
 
-  authentiCated!: boolean;
   public dropDownButtonItems = [
     {
       text: "My Profile",
@@ -30,7 +31,6 @@ export class NavbarComponent {
       text: "Log Out",
     },
   ];
-  constructor(private route: Router) { }
   ngDoCheck(): void {
     this.authentiCated = localStorage.getItem('auth') ? true : false;
   }
@@ -38,15 +38,33 @@ export class NavbarComponent {
     this.show = !this.show
     this.toggle.emit(this.show);
   }
-  signOut() {
+  open(): void {
+    this.opened = true;
+  }
+  closeModal(data: any):void{
+    this.opened = data;
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    // if (changes['opened']) {
+    //   this.opened = changes['opened'].currentValue;
+    // }
+  }
+
+  signOut(data:boolean):void {
     localStorage.removeItem('auth');
+    this.opened = data;
     this.route.navigate(['/login']);
+    this.alertService.displayNotification({
+      msg:'Sign out sucessfull',
+      type:'success'
+    })
   }
   public onSplitButtonItemClick(dataItem: { [key: string]: unknown }): void {
     if (dataItem) {
       switch (dataItem['text']){
         case 'Log Out' : 
-          this.signOut();
+          this.open();
           break;
         default:
           return;

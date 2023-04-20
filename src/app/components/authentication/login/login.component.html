@@ -1,4 +1,37 @@
+<div class="parent">
+<app-loader class="child1" [loadingPanelVisible]="loadingPanelVisible" ></app-loader>
 <div class="example-wrap">
+<app-custom-input
+  [control]="registerForm.controls.email"
+  label="Email"
+  type="text"
+  inputId="email"
+  hint="Your active email"
+  error="Error: Not valid email format"
+></app-custom-input>
+<app-custom-input
+  [control]="registerForm.controls.password"
+  label="Password"
+  type="password"
+  inputId="password"
+  hint="Your Password"
+  error="Error: Password incorrect"
+></app-custom-input>
+<span>
+  Don't have account
+  <a routerLink="/signup">Click Here</a>
+</span>
+
+<div>
+  <CustomButton ButtonName="Submit" themeColor="primary" (click)="submitForm()"></CustomButton>
+  <CustomButton ButtonName="Clear" themeColor="secondary" (click)="clearForm()"></CustomButton>
+  <!-- <button kendoButton themeColor="primary" (click)="submitForm()">
+    Submit
+  </button>
+  <button kendoButton (click)="clearForm()">Clear</button> -->
+</div>
+</div>
+<!-- <div class="example-wrap">
     <form class="k-form" [formGroup]="registerForm">
       <fieldset class="k-form-fieldset">
         <legend class="k-form-legend">Login Here</legend>
@@ -9,7 +42,7 @@
   
             <kendo-formhint>Your active email</kendo-formhint>
             <kendo-formerror>Error: Not valid email format</kendo-formerror>
-          </kendo-formfield>
+          </kendo-formfield>          
         <kendo-formfield>
           <kendo-label [for]="password" text="Password"></kendo-label>
           <input formControlName="password" kendoTextBox #password required />
@@ -27,4 +60,5 @@
         </div>
       </fieldset>
     </form>
+  </div> -->
   </div>

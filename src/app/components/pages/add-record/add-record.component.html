@@ -1,4 +1,15 @@
-<div>
-    <a routerLink="/pages/dashbord">Back to Dashbord</a>
-    <h1>Add Records </h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <kendo-grid [data]="gridData">
+                <kendo-grid-column field="ProductName" title="Product Name"></kendo-grid-column>
+                <kendo-grid-column field="Category.CategoryName" title="Category"></kendo-grid-column>
+                <kendo-grid-column field="UnitPrice" title="Price" format="{0:c}"></kendo-grid-column>
+            </kendo-grid>
+        </div>
+    </div>
 </div>
+
+<button kendoButton (click)="open()">Open dialog</button>
+
+<!-- <CustomModal msg="Are you sure you want to delete?" [opened]="opened" [close]="close" [open]="open"></CustomModal> -->
