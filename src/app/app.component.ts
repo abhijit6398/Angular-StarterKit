@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-stater';
+  expandable!:boolean;
+  toggle(toggle:boolean){
+    this.expandable = toggle;
+  }
 }

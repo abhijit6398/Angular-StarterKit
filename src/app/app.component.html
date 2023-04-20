@@ -1,3 +1,4 @@
-<app-navbar></app-navbar>
-<h1 style="text-align: center;">Welcome to Angular starter kit </h1>
+<app-navbar (toggle)="toggle($event)"></app-navbar>
+<app-sidebar [expandable]="expandable"></app-sidebar>
+<!-- <h1 style="text-align: center;">Welcome to Angular starter kit </h1> -->
 <router-outlet></router-outlet>

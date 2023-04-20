@@ -12,8 +12,7 @@ export class DashbordComponent {
   constructor(private apis: GlobalService,private route : Router) { }
   ngOnInit() {
     this.apis.todosGetApi().subscribe((res) => {
-      this.gridData = res
-      console.log(this.gridData)
+      this.gridData = res;
     });
   }
   onButtonClick(){
