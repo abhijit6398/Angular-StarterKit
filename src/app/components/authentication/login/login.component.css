@@ -1,7 +1,24 @@
-.example-wrap {
-    display: flex;
-    justify-content: center;
+.parent {
+    position: relative;
 }
+.example-wrap {
+    /* display: flex;
+    justify-content: center; */
+    width: 50%;
+    margin:auto;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; */
+}
+
+.child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
 
 .k-form {
     width: 400px;
