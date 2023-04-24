@@ -95,10 +95,16 @@ export class AppComponent {
     }
   }
   onSelect(ev: DrawerSelectEvent): void {
-    debugger
     this.selected = ev.item.text;
     const current = ev.item.id;
-
+    this.item.filter ((x:any):void=>{
+      if(current === x?.parentId){
+        this.sideNav.autoCollapse = false;
+      }else {
+        this.sideNav.autoCollapse = true;
+      }
+    })
+    
     if (this.expandedIndices.indexOf(current) >= 0) {
       this.expandedIndices = this.expandedIndices.filter(
         (id) => id !== current
