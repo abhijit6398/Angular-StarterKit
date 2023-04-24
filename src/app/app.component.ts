@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { DrawerComponent, DrawerItem, DrawerItemExpandedFn, DrawerSelectEvent } from '@progress/kendo-angular-layout';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -28,45 +29,53 @@ export class AppComponent {
   item = [
     {
       id:1,
-      text: "Inbox",
-      icon: "k-i-inbox",
-      selected: true
+      text: "Home",
+      icon: "k-i-home",
+      selected: true,
+      url: "/pages/dashbord"
     },
     {
       separator: true,
     },
     {
       id:2,
-      text: "Attachments",
-      icon: "k-i-envelop-link"
+      text: "Users List",
+      icon: "k-i-myspace"
     },
     {
-      text: "Calendar",
-      icon: "k-i-calendar",
-      id: 3
+      text: "Add New User",
+      icon: "k-i-file-add",
+      id: 3,
+      url: "/pages/addrecord"
     },
     {
-      text: "Notes",
-      icon: "k-i-edit",
-      id: 4,
-      parentId: 3
+      text: "User Profile",
+      icon: "k-i-user",
+      id: 4
     },
-    {
-      text: "Archive",
-      icon: "k-i-circle",
-      id: 5,
-      parentId: 3
-    },
+
+    // {
+    //   text: "Notes",
+    //   icon: "k-i-edit",
+    //   id: 4,
+    //   parentId: 3
+    // },
+    // {
+    //   text: "Archive",
+    //   icon: "k-i-circle",
+    //   id: 5,
+    //   parentId: 3
+    // },
   ]
   expanded = false;
   sidebarMode:string = 'push';
   items: Array<DrawerItem> = this.item;
-  selected = "Inbox";
+  selected = "Home";
   expandedIndices = [2];
   isItemExpanded: DrawerItemExpandedFn = (item): boolean => {
     return this.expandedIndices.indexOf(item.id) >= 0;
   };
-  constructor(private observer: BreakpointObserver) { }
+  constructor(private observer: BreakpointObserver, private route: Router) { }
   ngAfterViewInit() {
     this.observer.observe(['(max-width: 800px']).subscribe((res) => {
       if (res.matches) {
@@ -76,7 +85,7 @@ export class AppComponent {
         this.sidebarMode='overlay'
       } else {
         this.sideNav.mode = 'push';
-        this.sideNav.expanded = false;
+        this.sideNav.expanded = true;
         this.sideNav.mini = true;
         this.sideNav.autoCollapse = false;
         this.sidebarMode='push'
@@ -101,7 +110,10 @@ export class AppComponent {
       if(current === x?.parentId){
         this.sideNav.autoCollapse = false;
       }else {
-        this.sideNav.autoCollapse = true;
+        this.observer.observe(['(max-width: 800px']).subscribe(res=>(
+          res.matches ? this.sideNav.autoCollapse = true : this.sideNav.autoCollapse = false
+        ));
+        this.route.navigate([ev.item?.url]);
       }
     })
     
