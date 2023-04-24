@@ -21,6 +21,7 @@ import { InputsModule } from "@progress/kendo-angular-inputs";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
 import { NotificationModule } from '@progress/kendo-angular-notification';
 import { SharedModule } from './components/shared/shared.module';
+import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 
 
 
@@ -47,7 +48,8 @@ import { SharedModule } from './components/shared/shared.module';
     ButtonsModule,
     InputsModule,
     NotificationModule,
-    SharedModule
+    SharedModule,
+    IndicatorsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
