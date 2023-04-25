@@ -2,4 +2,13 @@
 <app-navbar></app-navbar>
 
 <!-- Side Navigation Bar -->
-<app-sidebar></app-sidebar>
+
+<span *ngIf="auth; then cond1; else cond2"></span>
+<ng-template #cond1>
+    <app-sidebar></app-sidebar>
+</ng-template>
+<ng-template #cond2>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</ng-template>

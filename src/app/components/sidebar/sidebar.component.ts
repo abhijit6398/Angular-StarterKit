@@ -27,7 +27,7 @@ export class SidebarComponent {
   constructor(private route: Router, private observer: BreakpointObserver) { };
 
   ngAfterViewInit() {
-    this.observer.observe(['(max-width: 800px']).subscribe((res) => {
+    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
       if (res.matches) {
         this.sideNav.mode = 'overlay';
         this.sideNav.mini = false;
@@ -40,7 +40,7 @@ export class SidebarComponent {
         this.sideNav.autoCollapse = false;
         this.sidebarMode = "push";
       }
-    })
+    });
   }
   onSelect(ev: DrawerSelectEvent): void {
     this.selected = ev.item.text;

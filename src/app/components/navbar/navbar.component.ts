@@ -24,7 +24,7 @@ export class NavbarComponent {
   constructor(private route: Router, private alertService : AlertService,private navService:NavbarService,private observer: BreakpointObserver ) { }
   
   ngAfterViewInit() {
-    this.observer.observe(['(max-width: 800px']).subscribe((res) => {
+    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
       if (res.matches) {
         this.sidebarMode = "overlay";
       }else{

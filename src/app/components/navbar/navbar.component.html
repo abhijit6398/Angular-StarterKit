@@ -1,11 +1,8 @@
-<CustomModal msg="Are you sure you want to Signout?" 
-[opened]="opened" 
- (closeModal)="closeModal($event)"
-(saveData)="signOut($event)" 
-></CustomModal>
+<CustomModal msg="Are you sure you want to Signout?" [opened]="opened" (closeModal)="closeModal($event)"
+  (saveData)="signOut($event)"></CustomModal>
 <kendo-appbar position="top">
-  <button kendoButton fillMode="flat" *ngIf="sidebarMode === 'overlay'" (click)="onToggle()">
-    <kendo-icon  name="menu"></kendo-icon>
+  <button kendoButton fillMode="flat" *ngIf="sidebarMode === 'overlay'" (click)="sideNav.toggle()">
+    <kendo-icon name="menu"></kendo-icon>
     <!-- <kendo-icon *ngIf="expanded" name="close"></kendo-icon>*ngIf="!expanded"-->
   </button>
   <ng-template #cond1>
@@ -18,26 +15,21 @@
 
   <kendo-appbar-section class="actions">
     <button kendoButton class="notificationButton" fillMode="flat" (click)="handleNotification()">
-    <kendo-badge-container>
-      <button kendoButton fillMode="flat" [disabled]="true">
-        <kendo-icon name="bell"></kendo-icon>
-      </button>
-      <kendo-badge
-        shape="dot"
-        themeColor="warning"
-        size="small"
-        position="inside"
-      ></kendo-badge>
-    </kendo-badge-container>
-  </button>
+      <kendo-badge-container>
+        <button kendoButton fillMode="flat" [disabled]="true">
+          <kendo-icon name="bell"></kendo-icon>
+        </button>
+        <kendo-badge shape="dot" themeColor="warning" size="small" position="inside"></kendo-badge>
+      </kendo-badge-container>
+    </button>
     <span class="k-appbar-separator"></span>
   </kendo-appbar-section>
   <kendo-appbar-section class="profileButton"></kendo-appbar-section>
   <kendo-appbar-section *ngIf="!authentiCated;then condition1 else condition2"></kendo-appbar-section>
   <ng-template #condition1>
-    <ul>
+    <ul type="none">
       <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-      <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li>
+      <!-- <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li> -->
     </ul>
   </ng-template>
   <ng-template #condition2>

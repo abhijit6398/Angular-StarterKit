@@ -14,3 +14,11 @@ kendo-badge-container {
 .profileButton {
     margin-right: 0.3rem;
 }
+a {
+    color: #f1f0f0;
+    font-size: 15px;
+    text-decoration: none;
+}
+ul{
+    text-align: center;
+}
