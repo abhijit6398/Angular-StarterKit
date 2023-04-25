@@ -3,18 +3,36 @@
  (closeModal)="closeModal($event)"
 (saveData)="signOut($event)" 
 ></CustomModal>
-<kendo-appbar class="navbar">
-    <kendo-appbar-section class="logo">
-        <button kendoButton fillMode="flat" (click)="onToggle()">
-            <kendo-icon name="menu"></kendo-icon>
-        </button>
-    </kendo-appbar-section>
-    <kendo-appbar-section>
-        <h1 class="title">Angular Starterkit</h1>
-    </kendo-appbar-section>
-
+<kendo-appbar position="top">
+  <button kendoButton fillMode="flat" *ngIf="sidebarMode === 'overlay'" (click)="onToggle()">
+    <kendo-icon  name="menu"></kendo-icon>
+    <!-- <kendo-icon *ngIf="expanded" name="close"></kendo-icon>*ngIf="!expanded"-->
+  </button>
+  <ng-template #cond1>
+    <kendo-appbar-spacer width="1px"></kendo-appbar-spacer>
+  </ng-template>
+  <kendo-appbar-section>
+    <h2>Angular Starterkit</h2>
+  </kendo-appbar-section>
   <kendo-appbar-spacer></kendo-appbar-spacer>
 
+  <kendo-appbar-section class="actions">
+    <button kendoButton class="notificationButton" fillMode="flat" (click)="handleNotification()">
+    <kendo-badge-container>
+      <button kendoButton fillMode="flat" [disabled]="true">
+        <kendo-icon name="bell"></kendo-icon>
+      </button>
+      <kendo-badge
+        shape="dot"
+        themeColor="warning"
+        size="small"
+        position="inside"
+      ></kendo-badge>
+    </kendo-badge-container>
+  </button>
+    <span class="k-appbar-separator"></span>
+  </kendo-appbar-section>
+  <kendo-appbar-section class="profileButton"></kendo-appbar-section>
   <kendo-appbar-section *ngIf="!authentiCated;then condition1 else condition2"></kendo-appbar-section>
   <ng-template #condition1>
     <ul>
@@ -24,14 +42,10 @@
   </ng-template>
   <ng-template #condition2>
     <div class="mx-2">
-        <kendo-dropdownbutton
-          [data]="dropDownButtonItems"
-          icon="user"
-          title="User Settings"
-          (itemClick)="onSplitButtonItemClick($event)"
-        >
-          User Profile
-        </kendo-dropdownbutton>
-      </div>
+      <kendo-dropdownbutton [data]="dropDownButtonItems" icon="user" title="User Settings"
+        (itemClick)="onSplitButtonItemClick($event)">
+        <!-- User Profile -->
+      </kendo-dropdownbutton>
+    </div>
   </ng-template>
 </kendo-appbar>
