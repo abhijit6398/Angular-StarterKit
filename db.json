@@ -6,7 +6,8 @@
       "email": "abc@gmail.com",
       "password": "123456789",
       "cnfPassword": "123456789",
-      "id": 1
+      "id": 1,
+      "skills": ["React", "Angular","Vue"]
     },
     {
       "name": "dinesh",
@@ -14,31 +15,8 @@
       "email": "xyz@gmail.com",
       "password": "12345678",
       "cnfPassword": "12345678",
-      "id": 2
-    },
-    {
-      "name": "dinesh",
-      "phnNum": 1234567890,
-      "email": "xyz@gmail.com",
-      "password": "12345678",
-      "cnfPassword": "12345678",
-      "id": 3
-    },
-    {
-      "name": "abhijit",
-      "phnNum": 7683850378,
-      "email": "",
-      "password": "",
-      "cnfPassword": "",
-      "id": 4
-    },
-    {
-      "name": "abhijit",
-      "phnNum": 7683850378,
-      "email": "abcd$%@gmail",
-      "password": "12345678",
-      "cnfPassword": "12345678",
-      "id": 5
+      "id": 2,
+      "skills": ["React", "Angular","Vue"]
     }
   ],
   "todos": [
@@ -57,5 +35,6 @@
       "title": "asdfx",
       "description": "sgvhx dgd vdd h d d ghd"
     }
-  ]
+  ],
+  "skillsList": ["Angular", "React","Vue","Node","Python"]  
 }

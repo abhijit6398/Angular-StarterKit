@@ -15,7 +15,7 @@ import { IntlModule } from '@progress/kendo-angular-intl';
 import { IconsModule } from '@progress/kendo-angular-icons';
 import { HttpClientModule } from '@angular/common/http';
 import { GridModule } from '@progress/kendo-angular-grid';
-import { MenuModule } from '@progress/kendo-angular-menu';
+// import { MenuModule } from '@progress/kendo-angular-menu';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { InputsModule } from "@progress/kendo-angular-inputs";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
@@ -23,13 +23,11 @@ import { NotificationModule } from '@progress/kendo-angular-notification';
 import { SharedModule } from './components/shared/shared.module';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +42,6 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
     NavigationModule,
     BrowserAnimationsModule,
     GridModule,
-    MenuModule,
     ButtonsModule,
     InputsModule,
     NotificationModule,

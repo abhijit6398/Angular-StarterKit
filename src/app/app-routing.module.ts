@@ -5,7 +5,7 @@ import { PagesModule } from './components/pages/pages.module';
 
 const routes: Routes = [
   {path:'',loadChildren:()=>{return AuthenticationModule}},
-  {path:'pages',loadChildren:()=>{return PagesModule}}
+  {path:'',loadChildren:()=>{return PagesModule}}
 ];
 
 @NgModule({
