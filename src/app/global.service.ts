@@ -8,6 +8,10 @@ export class GlobalService {
   private apiUrl = "http://localhost:3000";
   constructor(private http : HttpClient) { }
 
+  skillsListGetApi(){
+    return this.http.get(`${this.apiUrl}/skillsList`);
+  }
+
   usersGetApi(){
     return this.http.get(`${this.apiUrl}/users`)
   }
