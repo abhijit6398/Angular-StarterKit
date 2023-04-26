@@ -2,7 +2,6 @@
 <app-navbar [auth]="auth"></app-navbar>
 
 <!-- Side Navigation Bar -->
-
 <span *ngIf="auth; then cond1; else cond2"></span>
 <ng-template #cond1>
     <app-sidebar></app-sidebar>
