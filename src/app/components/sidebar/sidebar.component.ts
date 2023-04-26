@@ -30,37 +30,20 @@ export class SidebarComponent {
     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
       if (res.matches) {
         this.sideNav.mode = 'overlay';
+        this.sideNav.expanded = false;
         this.sideNav.mini = false;
         this.sideNav.autoCollapse = true;
         this.sidebarMode = "overlay";
       } else {
         this.sideNav.mode = 'push';
-        this.sideNav.expanded = false;
+        this.sideNav.expanded = true;
         this.sideNav.mini = true;
         this.sideNav.autoCollapse = false;
         this.sidebarMode = "push";
       }
     });
   }
-  // onSelect(ev: DrawerSelectEvent): void {
-  //   this.selected = ev.item.text;
-  //   const current = ev.item.id;
-  //   this.items.filter((x: any): void => {
-  //     if (current === x?.parentId) {
-  //       this.sideNav.autoCollapse = false;
-  //     } else {
-  //       this.sideNav.autoCollapse = true;
-  //     }
-  //   })
 
-  //   if (this.expandedIndices.indexOf(current) >= 0) {
-  //     this.expandedIndices = this.expandedIndices.filter(
-  //       (id) => id !== current
-  //     );
-  //   } else {
-  //     this.expandedIndices.push(current);
-  //   }
-  // }
   onSelect(ev: DrawerSelectEvent): void {
     this.selected = ev.item.text;
     const current = ev.item.id;

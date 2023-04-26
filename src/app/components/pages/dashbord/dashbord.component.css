@@ -1,3 +1,6 @@
+.main-container{
+    display: flex; 
+}
 .addButton {
     display: flex;
     justify-content: flex-end;
