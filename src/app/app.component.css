@@ -60,7 +60,7 @@ kendo-drawer-container{
     /* display: flex;
     justify-content: center;
     align-items: center; */
-    color: lightgray;
+    /* color: lightgray; */
     box-shadow: 0 0 5px 0px;
     border-radius: 5px;
     overflow-y: scroll;

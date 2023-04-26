@@ -9,6 +9,7 @@ import { ButtonsModule } from "@progress/kendo-angular-buttons";
 import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { NotFoundPageComponent } from '../not-found-page/not-found-page.component'; 
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     DashbordComponent,
@@ -19,6 +20,7 @@ import { SharedModule } from '../shared/shared.module';
     GridModule,
     ButtonsModule,
     DialogsModule,
+    ReactiveFormsModule,
     SharedModule,
     RouterModule.forChild([
       {path:'dashbord',component:DashbordComponent,canActivate:[AuthGuard], pathMatch:'full'},

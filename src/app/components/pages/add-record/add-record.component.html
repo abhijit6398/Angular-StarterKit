@@ -1,15 +1,38 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <kendo-grid [data]="gridData">
-                <kendo-grid-column field="ProductName" title="Product Name"></kendo-grid-column>
-                <kendo-grid-column field="Category.CategoryName" title="Category"></kendo-grid-column>
-                <kendo-grid-column field="UnitPrice" title="Price" format="{0:c}"></kendo-grid-column>
-            </kendo-grid>
-        </div>
-    </div>
+
+<h3 style="text-align: center;">Add New Employee...</h3>
+<div style="display: flex;">
+    <app-custom-input
+class="col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12 m-1"
+[control]="contactForm.controls.firstname"
+label="First Name"
+type="text"
+inputId="firstname"
+hint="Your First Name"
+error="Error: invalid Name"
+></app-custom-input>
+
+    <app-custom-input
+  [control]="contactForm.controls.email"
+  class="col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12 m-1"
+  label="Email"
+  type="text"
+  inputId="email"
+  hint="Your active email"
+  error="Error: Not valid email format"
+></app-custom-input>
 </div>
-
-<button kendoButton (click)="open()">Open dialog</button>
-
-<!-- <CustomModal msg="Are you sure you want to delete?" [opened]="opened" [close]="close" [open]="open"></CustomModal> -->
+<div style="display: flex;">
+<app-custom-input
+  [control]="contactForm.controls.lastname"
+  class="col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12 m-1"
+  label="Last Name"
+  type="text"
+  inputId="lastname"
+  hint="Your lastname"
+  error="Error: Not valid!"
+></app-custom-input>
+</div>
+<div>
+<CustomButton ButtonName="Submit" (click)="onSubmit()" themeColor="primary"></CustomButton>
+<CustomButton ButtonName="Clear" themeColor="secondary" (click)="onClear()"></CustomButton>
+</div>

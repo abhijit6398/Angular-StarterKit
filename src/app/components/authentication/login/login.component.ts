@@ -28,7 +28,7 @@ export class LoginComponent {
         this.loadingPanelVisible = false;
         this.alert.displayNotification({type:'success', msg:'user sucessfully logged in....'})
         localStorage.setItem('auth',JSON.stringify(true));
-        this.router.navigate(['/pages/dashbord']);
+        this.router.navigate(['/dashbord']);
       } else {
         this.loadingPanelVisible = false;
         this.alert.displayNotification({type:'error',msg:'something went wrong'});

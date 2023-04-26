@@ -7,18 +7,17 @@ import { RouterModule } from '@angular/router';
 import { InputsModule } from "@progress/kendo-angular-inputs";
 import { LabelModule } from "@progress/kendo-angular-label";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
-import { CustomInputComponent } from '../custom-input/custom-input.component';
+import {SharedModule} from '../shared/shared.module';
 import { LoaderComponentComponent } from '../loader-component/loader-component.component';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
-import { CustomButtonComponent } from '../custom-button/custom-button.component'; 
+//import { CustomButtonComponent } from '../custom-button/custom-button.component'; 
 
 @NgModule({
   declarations: [
     LoginComponent,
     SignupComponent,
-    CustomInputComponent,
     LoaderComponentComponent,
-    CustomButtonComponent
+    //CustomButtonComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +25,7 @@ import { CustomButtonComponent } from '../custom-button/custom-button.component'
     InputsModule,
     LabelModule,
     ButtonsModule,
+    SharedModule,
     IndicatorsModule,
     RouterModule.forChild([
       // {path:'',redirectTo :'/login'},

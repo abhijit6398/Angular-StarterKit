@@ -7,7 +7,7 @@
       "password": "123456789",
       "cnfPassword": "123456789",
       "id": 1,
-      "skills": ["React", "Angular","Vue"]
+      "skills": ["React", "Angular"]
     },
     {
       "name": "dinesh",
