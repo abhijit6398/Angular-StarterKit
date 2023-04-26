@@ -1,0 +1,21 @@
+.main-container{
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sub-container {
+    z-index: 2;
+    color: white;
+    border-radius: 10px;
+    width: 100vw;
+    height: 90vh;
+    padding: 1rem;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.sub-container::-webkit-scrollbar {
+    display: none;
+}
