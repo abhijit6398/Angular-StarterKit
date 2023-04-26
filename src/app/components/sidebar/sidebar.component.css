@@ -1,8 +1,48 @@
-.sidebar {
-    width: 100vw;
-    height: 100vh;
+kendo-drawer-container{
+    position: fixed;
+    height: calc(100vh - 47px);
+    width: 100%;
 }
-
-.sidebar-drawer {
-    width:200px;
+.kendoDrawerOverlay {
+    /* height: calc(100vh - 70px); */
+    /* margin: 10px; */
+    /* margin-top: 55px; */
+    width: 200px;
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.kendoDrawerPush {
+    height: calc(100vh - 70px);
+    margin: 10px;
+    /* margin-top: 55px; */
+    width: 200px;
+    border-right: none;
+    background: #002b5c;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.footerButton {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.footerButtonClose {
+    position: absolute;
+    bottom: 10px;
+    right: 16px;
+}
+.content {
+    height: calc(100vh - 70px);
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    font-size: 2rem;
+    color: lightgray;
+    box-shadow: 0 0 10px 5px;
+    border-radius: 5px;
 }

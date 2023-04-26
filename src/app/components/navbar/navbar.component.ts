@@ -1,22 +1,38 @@
-import { Component,OnChanges, ElementRef, EventEmitter, Output, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { Component, ElementRef, Input, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
+import { DrawerComponent } from '@progress/kendo-angular-layout';
 import { AlertService } from 'src/app/Service/alert.service';
+import { NavbarService } from 'src/app/Service/navbar.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  @ViewChild("anchor", { static: false })
+  @ViewChild(DrawerComponent) sideNav!: DrawerComponent;
+  @Input() auth: any;
+  
   public anchor!: ElementRef<HTMLElement>;
   public margin = { horizontal: -46, vertical: 7 };
-  show :boolean =false;
+  
   public kendokaAvatar = "https://www.telerik.com/kendo-angular-ui-develop/components/navigation/appbar/assets/kendoka-angular.png";
-  constructor(private route: Router, private alertService : AlertService ) { }
+  sidebarMode!:string;
   opened: boolean = false;
   authentiCated!: boolean;
-  @Output() toggle: EventEmitter<boolean> = new EventEmitter();
-
+  show :boolean =false;
+  expanded!:boolean;
+  constructor(private route: Router, private alertService : AlertService,private navService:NavbarService,private observer: BreakpointObserver ) { }
+  
+  ngAfterViewInit() {
+    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
+      if (res.matches) {
+        this.sidebarMode = "overlay";
+      }else{
+        this.sidebarMode = "push";
+      }
+    })
+  }
   public dropDownButtonItems = [
     {
       text: "My Profile",
@@ -31,12 +47,14 @@ export class NavbarComponent {
       text: "Log Out",
     },
   ];
+  
   ngDoCheck(): void {
     this.authentiCated = localStorage.getItem('auth') ? true : false;
+    console.log(this.auth)
   }
-  onToggle(){
-    this.show = !this.show
-    this.toggle.emit(this.show);
+  onToggle() {
+    this.show = !this.show;
+    this.navService.toggle(this.show);
   }
   open(): void {
     this.opened = true;
@@ -50,7 +68,10 @@ export class NavbarComponent {
     //   this.opened = changes['opened'].currentValue;
     // }
   }
-
+  handleNotification(){
+    console.log("Hello, Notification Clicked")
+  }
+  
   signOut(data:boolean):void {
     localStorage.removeItem('auth');
     this.opened = data;

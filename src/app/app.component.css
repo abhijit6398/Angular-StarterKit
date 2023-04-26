@@ -1,68 +1,22 @@
-kendo-appbar{
-    background-color: #004a9f;
-    color: white;
+.main-container {
+	display: block;
+	position: relative;
+	z-index: 0;
+  	padding: 5rem 4rem 0 4rem;
+	width: 100vw;
+    height: 90vh;
+	background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/283591/login-background.jpg);
+	box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
 }
-kendo-badge-container {
-    margin-right: 8px;
-}
-.notificationButton{
-    padding: 5px !important;
-}
-.actions .k-button {
-    padding: 0;
-}
-.profileButton {
-    margin-right: 0.3rem;
-}
-kendo-drawer-container{
-    position: fixed;
-    height: calc(100vh - 47px);
-    width: 100%;
-}
-.kendoDrawerOverlay {
-    /* height: calc(100vh - 70px); */
-    /* margin: 10px; */
-    /* margin-top: 55px; */
-    width: 200px;
-    border-right: none;
-    background: #002b5c;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
-.kendoDrawerPush {
-    height: calc(100vh - 6rem);
-    margin: 1rem;
-    /* padding: 1rem; */
-    /* margin-top: 55px; */
-    width: 200px;
-    border-right: none;
-    background: #002b5c;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
-.footerButton {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-}
-.footerButtonClose {
-    position: absolute;
-    bottom: 10px;
-    right: 16px;
-}
-.content {
-    height: calc(100vh - 6rem);
-    margin: 1rem;
-    padding: 1rem;
-    /* width: 80vw; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* color: lightgray; */
-    box-shadow: 0 0 5px 0px;
-    border-radius: 5px;
-    overflow-y: scroll;
-
+.main-container:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: radial-gradient(ellipse at left bottom, rgba(22, 24, 47, 1) 0%,rgba(38, 20, 72, .9) 59%, rgba(17, 27, 75, .9) 100%);
+	box-shadow: 0 -20px 150px -20px rgba(0, 0, 0, 0.5);
 }
