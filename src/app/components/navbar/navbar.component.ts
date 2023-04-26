@@ -1,5 +1,5 @@
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { Component, ElementRef, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, Input, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { DrawerComponent } from '@progress/kendo-angular-layout';
 import { AlertService } from 'src/app/Service/alert.service';
@@ -11,6 +11,7 @@ import { NavbarService } from 'src/app/Service/navbar.service';
 })
 export class NavbarComponent {
   @ViewChild(DrawerComponent) sideNav!: DrawerComponent;
+  @Input() auth: any;
   
   public anchor!: ElementRef<HTMLElement>;
   public margin = { horizontal: -46, vertical: 7 };
@@ -49,6 +50,7 @@ export class NavbarComponent {
   
   ngDoCheck(): void {
     this.authentiCated = localStorage.getItem('auth') ? true : false;
+    console.log(this.auth)
   }
   onToggle() {
     this.show = !this.show;

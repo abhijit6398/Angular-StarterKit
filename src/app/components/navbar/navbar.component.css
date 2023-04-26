@@ -1,24 +1,50 @@
-kendo-appbar{
+kendo-appbar {
     background-color: #004a9f;
     color: white;
 }
+
 kendo-badge-container {
     margin-right: 8px;
 }
-.notificationButton{
+
+.notificationButton {
     padding: 5px !important;
 }
+
 .actions .k-button {
     padding: 0;
 }
+
 .profileButton {
     margin-right: 0.3rem;
 }
+
 a {
     color: #f1f0f0;
     font-size: 15px;
     text-decoration: none;
 }
-ul{
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+ul li a {
+    display: block;
+    color: white;
     text-align: center;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: #555;
 }

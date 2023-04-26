@@ -26,6 +26,7 @@ p {
     height: 70vh;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 .input {
     background-color: #eee;
@@ -47,7 +48,8 @@ p {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    color: #FFFFFF;
+    color: #adf3e7;
+    background-color: rgb(90, 89, 89);
 }
 
 .overlay-container {
@@ -65,7 +67,6 @@ p {
     color: #FFFFFF;
     height: 100%;
     width: 100%;
-    border-radius: 0 10px 10px 0;
 }
 .overlay-panel {
     display: flex;

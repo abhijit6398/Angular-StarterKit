@@ -1,13 +1,11 @@
 <CustomModal msg="Are you sure you want to Signout?" [opened]="opened" (closeModal)="closeModal($event)"
   (saveData)="signOut($event)"></CustomModal>
 <kendo-appbar position="top">
-  <button kendoButton fillMode="flat" *ngIf="sidebarMode === 'overlay'" (click)="sideNav.toggle()">
+  <button kendoButton fillMode="flat" *ngIf="auth && sidebarMode === 'overlay'" (click)="sideNav.toggle()">
     <kendo-icon name="menu"></kendo-icon>
     <!-- <kendo-icon *ngIf="expanded" name="close"></kendo-icon>*ngIf="!expanded"-->
   </button>
-  <ng-template #cond1>
-    <kendo-appbar-spacer width="1px"></kendo-appbar-spacer>
-  </ng-template>
+  <kendo-appbar-spacer width="1px"></kendo-appbar-spacer>
   <kendo-appbar-section>
     <h2>Angular Starterkit</h2>
   </kendo-appbar-section>
@@ -17,8 +15,10 @@
   <kendo-appbar-section *ngIf="!authentiCated;then condition1 else condition2"></kendo-appbar-section>
   <ng-template #condition1>
     <ul type="none">
+      <li><a class="nav-link active" routerLink="/" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contactus</a></li>
       <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-      <!-- <li><a routerLink="/signup" routerLinkActive="active">Signup</a></li> -->
     </ul>
   </ng-template>
   <ng-template #condition2>
