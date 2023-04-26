@@ -1,10 +1,9 @@
-<div class="addButton">
+<!-- <div class="addButton">
     <button kendoButton (click)="onButtonClick()" fillMode="outline">
         Add Record
     </button>
+</div> -->
+<div style="display: flex; overflow-y: scroll;">
+<app-charts type="column" [data]="usersList" [list]="skillsList"></app-charts>
+<app-charts type="pie"></app-charts>
 </div>
-<kendo-grid [data]="gridData">
-    <kendo-grid-column field="id" title="ID"> </kendo-grid-column>
-    <kendo-grid-column field="title" title="Title"> </kendo-grid-column>
-    <kendo-grid-column field="description" title="Description"></kendo-grid-column>
-</kendo-grid>
