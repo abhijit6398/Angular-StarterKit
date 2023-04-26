@@ -1,7 +1,5 @@
 .main-container{
-    width: 100vw;
-    height: 90vh;
-    background: #fcdae5;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +47,7 @@ p {
     justify-content: center;
     flex-direction: column;
     text-align: center;
+    color: #FFFFFF;
 }
 
 .overlay-container {
@@ -91,6 +90,7 @@ p {
     .form-container{
         background: #FF416C;
         background: linear-gradient(142.18deg, #3793FF 0%, #FE368A 98.85%);
+        color: black;
         width: 100%;
         border-radius: 10px;
     }

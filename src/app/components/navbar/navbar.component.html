@@ -13,18 +13,7 @@
   </kendo-appbar-section>
   <kendo-appbar-spacer></kendo-appbar-spacer>
 
-  <kendo-appbar-section class="actions">
-    <button kendoButton class="notificationButton" fillMode="flat" (click)="handleNotification()">
-      <kendo-badge-container>
-        <button kendoButton fillMode="flat" [disabled]="true">
-          <kendo-icon name="bell"></kendo-icon>
-        </button>
-        <kendo-badge shape="dot" themeColor="warning" size="small" position="inside"></kendo-badge>
-      </kendo-badge-container>
-    </button>
-    <span class="k-appbar-separator"></span>
-  </kendo-appbar-section>
-  <kendo-appbar-section class="profileButton"></kendo-appbar-section>
+  
   <kendo-appbar-section *ngIf="!authentiCated;then condition1 else condition2"></kendo-appbar-section>
   <ng-template #condition1>
     <ul type="none">
@@ -33,6 +22,18 @@
     </ul>
   </ng-template>
   <ng-template #condition2>
+    <kendo-appbar-section class="actions">
+      <button kendoButton class="notificationButton" fillMode="flat" (click)="handleNotification()">
+        <kendo-badge-container>
+          <button kendoButton fillMode="flat" [disabled]="true">
+            <kendo-icon name="bell"></kendo-icon>
+          </button>
+          <kendo-badge shape="dot" themeColor="warning" size="small" position="inside"></kendo-badge>
+        </kendo-badge-container>
+      </button>
+      <span class="k-appbar-separator"></span>
+    </kendo-appbar-section>
+    <kendo-appbar-section class="profileButton"></kendo-appbar-section>
     <div class="mx-2">
       <kendo-dropdownbutton [data]="dropDownButtonItems" icon="user" title="User Settings"
         (itemClick)="onSplitButtonItemClick($event)">
