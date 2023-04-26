@@ -4,9 +4,6 @@ kendo-drawer-container{
     width: 100%;
 }
 .kendoDrawerOverlay {
-    /* height: calc(100vh - 70px); */
-    /* margin: 10px; */
-    /* margin-top: 55px; */
     width: 200px;
     border-right: none;
     background: #002b5c;
@@ -15,9 +12,8 @@ kendo-drawer-container{
     text-align: center;
 }
 .kendoDrawerPush {
-    height: calc(100vh - 70px);
-    margin: 10px;
-    /* margin-top: 55px; */
+    height: calc(100vh - 6rem);
+    margin: 1rem;
     width: 200px;
     border-right: none;
     background: #002b5c;
@@ -36,13 +32,10 @@ kendo-drawer-container{
     right: 16px;
 }
 .content {
-    height: calc(100vh - 70px);
-    margin: 10px;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-    font-size: 2rem;
-    color: lightgray;
-    box-shadow: 0 0 10px 5px;
+    height: calc(100vh - 6rem);
+    margin: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 5px 0;
     border-radius: 5px;
+    overflow-y: scroll;
 }

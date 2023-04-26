@@ -1,38 +1,18 @@
-
 <h3 style="text-align: center;">Add New Employee...</h3>
-<div style="display: flex;">
-    <app-custom-input
-class="col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12 m-1"
-[control]="contactForm.controls.firstname"
-label="First Name"
-type="text"
-inputId="firstname"
-hint="Your First Name"
-error="Error: invalid Name"
-></app-custom-input>
+<div class="form-row">
+  <app-custom-input class="col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12 m-1" [control]="contactForm.controls.firstname"
+    label="First Name" type="text" inputId="firstname" hint="Your First Name"
+    error="Error: invalid Name"></app-custom-input>
 
-    <app-custom-input
-  [control]="contactForm.controls.email"
-  class="col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12 m-1"
-  label="Email"
-  type="text"
-  inputId="email"
-  hint="Your active email"
-  error="Error: Not valid email format"
-></app-custom-input>
+  <app-custom-input [control]="contactForm.controls.email" class="col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12 m-1"
+    label="Email" type="text" inputId="email" hint="Your active email"
+    error="Error: Not valid email format"></app-custom-input>
 </div>
 <div style="display: flex;">
-<app-custom-input
-  [control]="contactForm.controls.lastname"
-  class="col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12 m-1"
-  label="Last Name"
-  type="text"
-  inputId="lastname"
-  hint="Your lastname"
-  error="Error: Not valid!"
-></app-custom-input>
+  <app-custom-input [control]="contactForm.controls.lastname" class="col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12 m-1"
+    label="Last Name" type="text" inputId="lastname" hint="Your lastname" error="Error: Not valid!"></app-custom-input>
 </div>
 <div>
-<CustomButton ButtonName="Submit" (click)="onSubmit()" themeColor="primary"></CustomButton>
-<CustomButton ButtonName="Clear" themeColor="secondary" (click)="onClear()"></CustomButton>
+  <CustomButton ButtonName="Submit" (click)="onSubmit()" themeColor="primary"></CustomButton>
+  <CustomButton ButtonName="Clear" themeColor="secondary" (click)="onClear()"></CustomButton>
 </div>

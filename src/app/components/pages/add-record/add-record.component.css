@@ -1,0 +1,10 @@
+.form-row {
+    display: flex;
+    flex-direction: row;
+}
+@media only screen and (max-width: 800px) {
+    .form-row {
+        display: flex;
+        flex-direction: column;
+    }
+}
