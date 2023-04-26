@@ -42,17 +42,39 @@ export class SidebarComponent {
       }
     });
   }
+  // onSelect(ev: DrawerSelectEvent): void {
+  //   this.selected = ev.item.text;
+  //   const current = ev.item.id;
+  //   this.items.filter((x: any): void => {
+  //     if (current === x?.parentId) {
+  //       this.sideNav.autoCollapse = false;
+  //     } else {
+  //       this.sideNav.autoCollapse = true;
+  //     }
+  //   })
+
+  //   if (this.expandedIndices.indexOf(current) >= 0) {
+  //     this.expandedIndices = this.expandedIndices.filter(
+  //       (id) => id !== current
+  //     );
+  //   } else {
+  //     this.expandedIndices.push(current);
+  //   }
+  // }
   onSelect(ev: DrawerSelectEvent): void {
     this.selected = ev.item.text;
     const current = ev.item.id;
-    this.items.filter((x: any): void => {
-      if (current === x?.parentId) {
+    this.items.filter ((x:any):void=>{
+      if(current === x?.parentId){
         this.sideNav.autoCollapse = false;
-      } else {
-        this.sideNav.autoCollapse = true;
+      }else {
+        this.observer.observe(['(max-width: 800px']).subscribe(res=>(
+          res.matches ? this.sideNav.autoCollapse = true : this.sideNav.autoCollapse = false
+        ));
+        this.route.navigate([ev.item?.url && ev.item?.url]);
       }
     })
-
+    
     if (this.expandedIndices.indexOf(current) >= 0) {
       this.expandedIndices = this.expandedIndices.filter(
         (id) => id !== current
@@ -61,5 +83,4 @@ export class SidebarComponent {
       this.expandedIndices.push(current);
     }
   }
-
 }

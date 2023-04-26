@@ -1,33 +1,43 @@
 export const items = [
   {
     id:1,
-    text: "Inbox",
-    icon: "k-i-inbox",
-    selected: true
+    text: "Home",
+    icon: "k-i-home",
+    selected: true,
+    url: "/dashbord"
   },
   {
     separator: true,
   },
   {
     id:2,
-    text: "Attachments",
-    icon: "k-i-envelop-link"
+    text: "Users List",
+    icon: "k-i-myspace",
+    url: "/list"
   },
   {
-    text: "Calendar",
-    icon: "k-i-calendar",
-    id: 3
+    text: "Add New User",
+    icon: "k-i-file-add",
+    id: 3,
+    url: "/addrecord"
   },
   {
-    text: "Notes",
-    icon: "k-i-edit",
+    text: "User Profile",
+    icon: "k-i-user",
     id: 4,
-    parentId: 3
+    url: "/profile"
   },
-  {
-    text: "Archive",
-    icon: "k-i-circle",
-    id: 5,
-    parentId: 3
-  },
+
+  // {
+  //   text: "Notes",
+  //   icon: "k-i-edit",
+  //   id: 4,
+  //   parentId: 3
+  // },
+  // {
+  //   text: "Archive",
+  //   icon: "k-i-circle",
+  //   id: 5,
+  //   parentId: 3
+  // },
 ];
