@@ -22,7 +22,6 @@ import { ButtonsModule } from "@progress/kendo-angular-buttons";
 import { NotificationModule } from '@progress/kendo-angular-notification';
 import { SharedModule } from './components/shared/shared.module';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
-
 @NgModule({
   declarations: [
     AppComponent,
