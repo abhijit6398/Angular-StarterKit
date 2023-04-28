@@ -48,3 +48,15 @@ ul li a {
 ul li a:hover {
     background-color: #555;
 }
+.logo-holder{
+    display: flex;
+    justify-content: left;
+    margin-right: 40px;
+}
+.logo {
+    position: relative;
+    display: inline-block;
+}
+.image {
+    width: 5.6rem;
+}

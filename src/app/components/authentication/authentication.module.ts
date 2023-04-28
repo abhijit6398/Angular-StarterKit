@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 import { InputsModule } from "@progress/kendo-angular-inputs";
 import { LabelModule } from "@progress/kendo-angular-label";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
+import { IconsModule } from '@progress/kendo-angular-icons';
+import { LayoutModule } from "@progress/kendo-angular-layout";
 import {SharedModule} from '../shared/shared.module';
 import { LoaderComponentComponent } from '../loader-component/loader-component.component';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
@@ -29,6 +31,8 @@ import { ContactComponent } from './contact/contact.component';
     ButtonsModule,
     SharedModule,
     IndicatorsModule,
+    IconsModule,
+    LayoutModule,
     RouterModule.forChild([
       {path:'login',component:LoginComponent },
       {path:'home',component:HomeComponent},

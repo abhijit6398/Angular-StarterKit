@@ -7,6 +7,7 @@ import { ButtonThemeColor } from '@progress/kendo-angular-buttons';
   styleUrls: ['./custom-button.component.css']
 })
 export class CustomButtonComponent {
+@Input() demo : string = "";
 @Input() ButtonName: string = "";
 @Input() themeColor: ButtonThemeColor = 'primary';
 @Input() customStyle: string = "col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12"

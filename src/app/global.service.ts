@@ -28,4 +28,7 @@ export class GlobalService {
     return this.http.post(`${this.apiUrl}/todos`,data)
   }
 
+  contactPostApi(data:any){
+    return this.http.post(`${this.apiUrl}/contacts`,data)
+  }
 }

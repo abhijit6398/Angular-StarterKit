@@ -4,10 +4,13 @@
       "name": "abhi",
       "phnNum": 1234567890,
       "email": "abc@gmail.com",
-      "password": "123456789",
+      "password": "Abc@1234",
       "cnfPassword": "123456789",
       "id": 1,
-      "skills": ["React", "Angular"]
+      "skills": [
+        "React",
+        "Angular"
+      ]
     },
     {
       "name": "dinesh",
@@ -16,7 +19,11 @@
       "password": "12345678",
       "cnfPassword": "12345678",
       "id": 2,
-      "skills": ["React", "Angular","Vue"]
+      "skills": [
+        "React",
+        "Angular",
+        "Vue"
+      ]
     }
   ],
   "todos": [
@@ -36,5 +43,31 @@
       "description": "sgvhx dgd vdd h d d ghd"
     }
   ],
-  "skillsList": ["Angular", "React","Vue","Node","Python"]  
+  "skillsList": [
+    "Angular",
+    "React",
+    "Vue",
+    "Node",
+    "Python"
+  ],
+  "contacts": [
+    {
+      "name": "abhi",
+      "email": "abc@gmail.com",
+      "description": "asdfghjkl",
+      "id": 1
+    },
+    {
+      "name": "saxsa",
+      "email": "testuser@gmail.com",
+      "description": "Hello i'm saxsa from hyd",
+      "id": 2
+    },
+    {
+      "name": "Abhijit",
+      "email": "abc@gmail.com",
+      "description": "jh jvg vgvh vvghv gjh v",
+      "id": 3
+    }
+  ]
 }

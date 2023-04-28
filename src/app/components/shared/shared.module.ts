@@ -10,9 +10,10 @@ import { InputsModule } from "@progress/kendo-angular-inputs";
 import { LabelModule } from "@progress/kendo-angular-label";
 import { ReactiveFormsModule } from "@angular/forms";
 import { CustomButtonComponent } from '../custom-button/custom-button.component';
+import { CustomTextareaComponent } from '../custom-textarea/custom-textarea.component';
 
 @NgModule({
-  declarations: [ModalsComponent, ChartsComponent, CustomInputComponent, CustomButtonComponent],
+  declarations: [ModalsComponent, ChartsComponent, CustomInputComponent, CustomButtonComponent, CustomTextareaComponent],
   imports: [
     CommonModule,
     DialogsModule,
@@ -22,6 +23,6 @@ import { CustomButtonComponent } from '../custom-button/custom-button.component'
     LabelModule,
     ReactiveFormsModule
   ],
-  exports: [ModalsComponent, ChartsComponent, CustomInputComponent, CustomButtonComponent]
+  exports: [ModalsComponent, ChartsComponent, CustomInputComponent, CustomButtonComponent, CustomTextareaComponent]
 })
 export class SharedModule { }

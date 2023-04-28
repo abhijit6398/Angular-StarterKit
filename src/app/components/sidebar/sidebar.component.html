@@ -2,24 +2,44 @@
   <kendo-drawer-container>
     <!-- Sidenavigation Area -->
     <kendo-drawer
-      [ngClass]="{ 'kendoDrawerPush': (sidebarMode === 'push'), 'kendoDrawerOverlay': (sidebarMode === 'overlay') }"
-      #sidenav 
-      [items]="items" 
-      [autoCollapse]="false" 
-      [width]="200" 
+      [ngClass]="{
+        kendoDrawerPush: sidebarMode === 'push',
+        kendoDrawerOverlay: sidebarMode === 'overlay'
+      }"
+      #sidenav
+      [items]="items"
+      [autoCollapse]="false"
+      [width]="200"
       [isItemExpanded]="isItemExpanded"
-      (select)="onSelect($event)" 
+      (select)="onSelect($event)"
       [animation]="{ type: 'slide', duration: 400 }"
-      >
+    >
+      <div *ngIf="!sidenav.expanded">
+        <ng-template kendoDrawerItemTemplate let-item let-expanded="expanded">
+          <div kendoTooltip [title]="item.text">
+            <kendo-icon [name]="item.icon"></kendo-icon>
+          </div>
+        </ng-template>
+      </div>
       <ng-template kendoDrawerFooterTemplate>
-        <button kendoButton 
-          [ngClass]="{ 'footerButton': !sidenav.expanded, 'footerButtonClose': sidenav.expanded }"
-          fillMode="flat" 
-          *ngIf="sidenav.mode === 'push'" 
+        <button
+          kendoButton
+          [ngClass]="{
+            footerButton: !sidenav.expanded,
+            footerButtonClose: sidenav.expanded
+          }"
+          fillMode="flat"
+          *ngIf="sidenav.mode === 'push'"
           (click)="sidenav.toggle()"
-          >
-          <kendo-icon *ngIf="!sidenav.expanded" name="arrow-chevron-right"></kendo-icon>
-          <kendo-icon *ngIf="sidenav.expanded" name="arrow-chevron-left"></kendo-icon>
+        >
+          <kendo-icon
+            *ngIf="!sidenav.expanded"
+            name="arrow-chevron-right"
+          ></kendo-icon>
+          <kendo-icon
+            *ngIf="sidenav.expanded"
+            name="arrow-chevron-left"
+          ></kendo-icon>
         </button>
       </ng-template>
     </kendo-drawer>
