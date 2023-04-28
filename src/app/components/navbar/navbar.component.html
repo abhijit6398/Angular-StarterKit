@@ -1,6 +1,9 @@
 <CustomModal msg="Are you sure you want to Signout?" [opened]="opened" (closeModal)="closeModal($event)"
   (saveData)="signOut($event)"></CustomModal>
-<kendo-appbar position="top">
+<kendo-appbar position="top" [ngClass]="{
+  kendoappbarLogin:authentiCated ,
+  kendoappbar: !authentiCated
+}">
   <button kendoButton fillMode="flat" *ngIf="auth && sidebarMode === 'overlay'" (click)="sideNav.toggle()">
     <kendo-icon name="menu"></kendo-icon>
     <!-- <kendo-icon *ngIf="expanded" name="close"></kendo-icon>*ngIf="!expanded"-->
