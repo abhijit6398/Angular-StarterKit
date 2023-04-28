@@ -50,7 +50,7 @@ export class NavbarComponent {
   
   ngDoCheck(): void {
     this.authentiCated = localStorage.getItem('auth') ? true : false;
-    console.log(this.auth)
+    // console.log(this.auth)
   }
   onToggle() {
     this.show = !this.show;
