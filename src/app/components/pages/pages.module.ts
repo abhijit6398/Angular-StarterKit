@@ -10,10 +10,15 @@ import { DialogsModule } from '@progress/kendo-angular-dialog';
 import { NotFoundPageComponent } from '../not-found-page/not-found-page.component'; 
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LabelModule } from "@progress/kendo-angular-label";
+import { DropDownsModule } from "@progress/kendo-angular-dropdowns";
+import { ProfileComponent } from './profile/profile.component';
+import { LayoutModule } from "@progress/kendo-angular-layout";
 @NgModule({
   declarations: [
     DashbordComponent,
     AddRecordComponent,
+    ProfileComponent,
   ],
   imports: [
     CommonModule,
@@ -21,10 +26,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     ButtonsModule,
     DialogsModule,
     ReactiveFormsModule,
+    LabelModule,
+    LayoutModule,
     SharedModule,
+    DropDownsModule,
     RouterModule.forChild([
-      {path:'dashbord',component:DashbordComponent,canActivate:[AuthGuard], pathMatch:'full'},
+      {path:'dashbord',component:DashbordComponent,canActivate:[AuthGuard], pathMatch:'full' },
       {path:'addrecord',component:AddRecordComponent,canActivate:[AuthGuard]},
+      {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
       { path: '**', component: NotFoundPageComponent }
     ])
   ]

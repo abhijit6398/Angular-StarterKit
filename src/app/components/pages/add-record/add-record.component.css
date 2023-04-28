@@ -1,6 +1,9 @@
 .form-row {
+    padding-left: 1rem;
+    padding-right: 1rem;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 @media only screen and (max-width: 800px) {
     .form-row {
@@ -8,3 +11,7 @@
         flex-direction: column;
     }
 }
+/* 
+kendo-dropdownlist {
+    width: 170px;
+} */
