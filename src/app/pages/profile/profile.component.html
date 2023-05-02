@@ -1,7 +1,7 @@
 <div class="mx-4 wrap">
   <div class="d-flex">
     <kendo-avatar
-      [initials]="profileData.name | initials"
+      [initials]="profileData.name | initials | uppercase "
       class="my-avatar"
       size="large"
       [imageSrc]="profileData.profileUrl"

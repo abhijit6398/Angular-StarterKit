@@ -5,7 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class InitialsPipe implements PipeTransform {
   transform(value: string): string {
-    const parts = value.split(' ');
-    return parts.map(part => part.charAt(0)).join(' ');
+    return value.split(' ').map(part => part.charAt(0)).join('');
   }
 }

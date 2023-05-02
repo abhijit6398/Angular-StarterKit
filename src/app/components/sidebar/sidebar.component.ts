@@ -52,7 +52,7 @@ export class SidebarComponent {
         this.sideNav.autoCollapse = false
       } else {
         this.observer
-          .observe(['(max-width: 800px'])
+          .observe(['(max-width: 800px)'])
           .subscribe((res) =>
             res.matches
               ? (this.sideNav.autoCollapse = true)

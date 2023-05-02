@@ -8,26 +8,18 @@ import { FormBuilder } from '@angular/forms'
 })
 export class AddRecordComponent {
   public opened: boolean = false
-  contactForm: any
+  contactForm;
   constructor(private formBuilder: FormBuilder) {
     this.contactForm = this.formBuilder.group({
-      firstname: [
-        '',
-        Validators.compose([Validators.required, Validators.minLength(5)]),
-      ],
-      lastname: [
-        '',
-        Validators.compose([Validators.required, Validators.minLength(5)]),
-      ],
-      email: ['', Validators.compose([Validators.required, Validators.email])],
-      phoneNo: [
-        '',
-        Validators.compose([Validators.required, Validators.pattern('')]),
-      ],
-      skills: [''],
-      designation: (['', Validators.compose([Validators.required])]),
-    })
+      firstname: new FormControl('', [Validators.required]),
+      lastname: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.email]),
+      phoneNo: new FormControl('', [Validators.required]),
+      skills: new FormControl<string[]>([]),
+      designation: new FormControl('', [Validators.required]),
+    });
   }
+
 
   public listItems: Array<string> = [
     'React',
@@ -46,29 +38,22 @@ export class AddRecordComponent {
 
   public demoItems: Array<string> = ["Architect", "Lead", "Sr.Engineer", "Engineer","Junior","Intern"];
 
-  onSubmit(value:{}) {
-    console.log(value,'submit');
-    console.log(this.contactForm.value, 'submit')
+  onSubmit() {
+    console.log(this.contactForm.value, 'submit');
   }
 
-  public handleValueChange(value: string[]): void {
-    this.contactForm.controls.skills.setValue(value)
+  public handleValueChange(value: any): void {
+    this.contactForm.controls['skills'].setValue(value)
   }
 
-  public handleDropDownChange(value: string): void{
-    this.contactForm.controls.designation.setValue(value)
+  public handleDropDownChange(value: any): void{
+    this.contactForm.controls['designation'].setValue(value)
   }
 
   onClear() {
     console.log(this.contactForm,'clear')
-    this.contactForm.reset({
-      firstname: [''],
-      lastname: [''],
-      email: [''],
-      phoneNo: [''],
-      skills: [''],
-      designation: [''],
-    })}
+    this.contactForm.reset()
+  }
 
   public close(status: string): void {
     console.log(`Dialog result: ${status}`)

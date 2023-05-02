@@ -1,8 +1,9 @@
 <h3 style="text-align: center;">Add New Employee...</h3>
-<!-- <form  [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)"> -->
+<form  [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 <div class="form-row">
   <app-custom-input
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
+    [control]="contactForm.controls.firstname"
     controlName="firstname"
     label="First Name"
     type="text"
@@ -12,6 +13,7 @@
   ></app-custom-input>
   <app-custom-input
     controlName="lastname"
+    [control]="contactForm.controls.lastname"
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
     label="Last Name"
     type="text"
@@ -23,6 +25,7 @@
 <div class="form-row">
   <app-custom-input
     controlName="email"
+    [control]="contactForm.controls.email"
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
     label="Email"
     type="text"
@@ -32,6 +35,7 @@
   ></app-custom-input>
   <app-custom-input
     controlName="phoneNo"
+    [control]="contactForm.controls.phoneNo"
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
     label="Phone No"
     type="number"
@@ -40,7 +44,7 @@
     error="Error: Not valid Phone Number"
   ></app-custom-input>
 </div>
-<div class="form-row">
+<!-- <div class="form-row">
   <kendo-label
     [for]="contactForm.skills"
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
@@ -65,18 +69,17 @@
       (valueChange)="handleDropDownChange($event)"
     ></kendo-dropdownlist>
   </kendo-label>
-</div>
+</div> -->
 <div style="margin: 1rem;">
   <CustomButton
-    [ButtonName]="'Submit'"
+    label="Submit"
     themeColor="primary"
-    demo="submit"
-    (click)="onSubmit(contactForm)"
+    [type]="'submit'"
   ></CustomButton>
   <CustomButton
-    ButtonName="Clear"
+    label="Clear"
     themeColor="secondary"
     (click)="onClear()"
   ></CustomButton>
 </div>
-<!-- </form> -->
+</form>
