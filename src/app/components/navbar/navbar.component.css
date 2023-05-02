@@ -1,6 +1,12 @@
-kendo-appbar {
+.kendoappbarLogin {
+    background-color: white;
+    color: rgb(14, 13, 13);
+    box-shadow: none;
+}
+.kendoappbar {
     background-color: #240754;
     color: white;
+    box-shadow: none;
 }
 
 kendo-badge-container {

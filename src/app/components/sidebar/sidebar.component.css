@@ -9,6 +9,7 @@ kendo-drawer-container{
     background: #002b5c;
     color: white;
     text-align: center;
+    border-radius: 4rem;
 }
 .kendoDrawerPush {
     height: calc(100vh - 3.9rem);
@@ -17,6 +18,7 @@ kendo-drawer-container{
     background: #002b5c;
     color: white;
     text-align: center;
+    border-radius: 0 0.4rem 0 0;
 }
 .footerButton {
     position: absolute;
