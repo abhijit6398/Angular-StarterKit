@@ -1,9 +1,9 @@
 <h3 style="text-align: center;">Add New Employee...</h3>
 <div class="form-row">
-  <form  [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)"></form>
+  <form  [formGroup]="contactForm" (submit)="onSubmit(contactForm)"></form>
   <app-custom-input
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
-    [control]="contactForm.controls.firstname"
+    controlName="firstname"
     label="First Name"
     type="text"
     inputId="firstname"
@@ -11,7 +11,7 @@
     error="Error: invalid Name"
   ></app-custom-input>
   <app-custom-input
-    [control]="contactForm.controls.lastname"
+    controlName="lastname"
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
     label="Last Name"
     type="text"
@@ -22,7 +22,7 @@
 </div>
 <div class="form-row">
   <app-custom-input
-    [control]="contactForm.controls.email"
+    controlName="email"
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
     label="Email"
     type="text"
@@ -31,7 +31,7 @@
     error="Error: Not valid email format"
   ></app-custom-input>
   <app-custom-input
-    [control]="contactForm.controls.phoneNo"
+    controlName="phoneNo"
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
     label="Phone No"
     type="number"
@@ -68,7 +68,7 @@
 </div>
 <div style="margin: 1rem;">
   <CustomButton
-    ButtonName="Submit"
+    [ButtonName]="'Submit'"
     themeColor="primary"
     demo="submit"
   ></CustomButton>

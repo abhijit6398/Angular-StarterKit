@@ -44,7 +44,7 @@ export class AddRecordComponent {
     { text: 'Artictech', value: 'Artictech' },
   ]
 
-  public demoItems: Array<string> = ["Small", "Medium", "Large"];
+  public demoItems: Array<string> = ["Architect", "Lead", "Sr.Engineer", "Engineer","Junior","Intern"];
 
   onSubmit(value:{}) {
     console.log(this.contactForm.value, 'submit')
