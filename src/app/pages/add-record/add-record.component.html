@@ -44,32 +44,38 @@
     error="Error: Not valid Phone Number"
   ></app-custom-input>
 </div>
-<!-- <div class="form-row">
-  <kendo-label
-    [for]="contactForm.skills"
-    class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
+<div class="form-row">
+  <div class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1">
+    <kendo-label 
+     for="designation" text="Designation">
+    <kendo-dropdownlist
+      [data]="demoItems"
+      textField="title"
+      valueField="title"
+      [valuePrimitive]="true"
+      [defaultItem]="{ title: 'Select a designation' }"
+      style="background-color: #ffffff;"
+      [formControl]="contactForm.controls.designation"
+      id="designation"
+    >
+    </kendo-dropdownlist>
+  </kendo-label>
+  </div>
+    <div class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1">
+      <kendo-label
+    for="skills"
     text="Skill Set:"
   >
     <kendo-multiselect
       formControlName="skills"
-      #skills
       [data]="listItems"
       (valueChange)="handleValueChange($event)"
     ></kendo-multiselect>
   </kendo-label>
-  <kendo-label
-    [for]="contactForm.designation"
-    class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
-    text="Designation:"
-  >
-  <kendo-dropdownlist
-      #designation
-      [data]="demoItems"
-      style="background-color: #FFFFFF;"
-      (valueChange)="handleDropDownChange($event)"
-    ></kendo-dropdownlist>
-  </kendo-label>
-</div> -->
+    </div>
+  
+
+</div>
 <div style="margin: 1rem;">
   <CustomButton
     label="Submit"

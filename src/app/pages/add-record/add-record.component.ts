@@ -14,7 +14,7 @@ export class AddRecordComponent {
       firstname: new FormControl('', [Validators.required]),
       lastname: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.email]),
-      phoneNo: new FormControl('', [Validators.required]),
+      phoneNo: new FormControl('', [Validators.required, Validators.pattern('^\\+?[0-9]{1,3}?[-. ]?\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$')]),
       skills: new FormControl<string[]>([]),
       designation: new FormControl('', [Validators.required]),
     });
