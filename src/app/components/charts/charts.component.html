@@ -1,21 +1,24 @@
 <!-- <h1>Chart Works</h1> -->
 
 <kendo-chart class="chart-container">
-    <kendo-chart-area background="#eee"> </kendo-chart-area>
-    <kendo-chart-title text="Avaliable Resources"></kendo-chart-title>
-    <kendo-chart-legend position="bottom" orientation="horizontal">
-    </kendo-chart-legend>
-    <kendo-chart-series>
-      <kendo-chart-series-item name="Skills"
-          [type]="type" [data]="seriesData"
-          field="count" categoryField="skills">
-          <kendo-chart-series-item-labels 
-          [align]="labelStyle" 
-          [content]="labelContent"
-          >
-          </kendo-chart-series-item-labels>
-      </kendo-chart-series-item>
-      
-    </kendo-chart-series>
-  </kendo-chart>
-  
+  <kendo-chart-area background="#eee"></kendo-chart-area>
+  <kendo-chart-title text="Avaliable Resources"></kendo-chart-title>
+  <kendo-chart-legend
+    position="bottom"
+    orientation="horizontal"
+  ></kendo-chart-legend>
+  <kendo-chart-series>
+    <kendo-chart-series-item
+      name="Skills"
+      [type]="type"
+      [data]="seriesData"
+      field="count"
+      categoryField="skills"
+    >
+      <kendo-chart-series-item-labels
+        [align]="labelStyle"
+        [content]="labelContent"
+      ></kendo-chart-series-item-labels>
+    </kendo-chart-series-item>
+  </kendo-chart-series>
+</kendo-chart>

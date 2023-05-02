@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { GlobalService } from 'src/app/global.service';
+import { GlobalService } from 'src/app/Service/Http.service';
 
 @Component({
   selector: 'app-signup',

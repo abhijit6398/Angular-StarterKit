@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/Service/alert.service';
-import { GlobalService } from 'src/app/global.service';
+import { GlobalService } from 'src/app/Service/Http.service';
 
 @Component({
   selector: 'app-login',
@@ -25,9 +25,15 @@ export class LoginComponent {
     this.loadingPanelVisible = true;
     const user = this.apis.usersGetApi().subscribe((res:any)=>{
       if(res.find((x: { email: any; password:any; }) =>x.email === this.registerForm.value.email && x.password === this.registerForm.value.password)){
+        let data = res.filter((x:any):void => {
+          if(x.email === this.registerForm.value.email && x.password === this.registerForm.value.password){
+            return x;
+          }
+        });
         this.loadingPanelVisible = false;
         this.alert.displayNotification({type:'success', msg:'user sucessfully logged in....'})
         localStorage.setItem('auth',JSON.stringify(true));
+        localStorage.setItem('details', JSON.stringify(data[0]));
         this.router.navigate(['/dashbord']);
       } else {
         this.loadingPanelVisible = false;

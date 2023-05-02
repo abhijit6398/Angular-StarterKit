@@ -1,5 +1,9 @@
 import { Component, Input, SimpleChanges } from '@angular/core'
-import { SeriesLabelsAlignment, SeriesLabelsContentArgs, SeriesType } from '@progress/kendo-angular-charts';
+import {
+  SeriesLabelsAlignment,
+  SeriesLabelsContentArgs,
+  SeriesType,
+} from '@progress/kendo-angular-charts'
 
 interface Model {
   skills: string
@@ -12,15 +16,14 @@ interface Model {
   styleUrls: ['./charts.component.css'],
 })
 export class ChartsComponent {
-
-  constructor(){}
+  constructor() {}
   public labelContent = (e: SeriesLabelsContentArgs): string => {
     return e.value
-  };
-  public labelStyle : SeriesLabelsAlignment = "column"
-  public dummyData:any;
-  @Input() type: SeriesType = "column";
-  @Input() list: string[] = [];
+  }
+  public labelStyle: SeriesLabelsAlignment = 'column'
+  public dummyData: any
+  @Input() type: SeriesType = 'column'
+  @Input() list: string[] = []
 
   public seriesData: Model[] = [
     {
@@ -35,32 +38,23 @@ export class ChartsComponent {
       skills: 'Vue',
       count: 2,
     },
-  ];
+  ]
 
-  @Input() data! : Model[];
+  @Input() data!: Model[]
 
-
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    const sup = this.list?.map((item:any)=>{
-      let items = this.data?.filter((x:any)=>{
+    const sup = this.list?.map((item: any) => {
+      let items = this.data?.filter((x: any) => {
         return x.skills?.includes(item)
       })
-      return {skills:item, count:items?.length}
-     });
-     this.seriesData = sup; 
-    if(changes['data']?.firstChange) return;
-   this.data = changes['data']?.currentValue;
+      return { skills: item, count: items?.length }
+    })
+    this.seriesData = sup
+    if (changes['data']?.firstChange) return
+    this.data = changes['data']?.currentValue
   }
 
-
-  ngDoCheck(): void { 
-
-  }
+  ngDoCheck(): void {}
 }
-
-
-

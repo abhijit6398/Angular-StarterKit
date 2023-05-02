@@ -1,6 +1,6 @@
 <h3 style="text-align: center;">Add New Employee...</h3>
+<!-- <form  [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm)"> -->
 <div class="form-row">
-  <form  [formGroup]="contactForm" (submit)="onSubmit(contactForm)"></form>
   <app-custom-input
     class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
     controlName="firstname"
@@ -71,6 +71,7 @@
     [ButtonName]="'Submit'"
     themeColor="primary"
     demo="submit"
+    (click)="onSubmit(contactForm)"
   ></CustomButton>
   <CustomButton
     ButtonName="Clear"
@@ -78,3 +79,4 @@
     (click)="onClear()"
   ></CustomButton>
 </div>
+<!-- </form> -->

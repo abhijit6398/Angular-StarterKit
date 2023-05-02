@@ -1,17 +1,17 @@
 <div class="example-wrapper">
-    <kendo-dialog
-      *ngIf="opened"
-      title="Please Confirm"
-      (close)="close()"
-      [minWidth]="250"
-      [width]="450"
-    >
+  <kendo-dialog
+    *ngIf="opened"
+    title="Please Confirm"
+    (close)="close()"
+    [minWidth]="250"
+    [width]="450"
+  >
     <p style="display: flex; text-align: center;">{{msg}}</p>
-      <kendo-dialog-actions>
-        <button kendoButton (click)="close()">No</button>
-        <button kendoButton (click)="save()" themeColor="primary">
-          Yes
-        </button>
-      </kendo-dialog-actions>
-    </kendo-dialog>
-  </div>
+    <kendo-dialog-actions>
+      <button kendoButton (click)="close()">No</button>
+      <button kendoButton (click)="save()" themeColor="primary">
+        Yes
+      </button>
+    </kendo-dialog-actions>
+  </kendo-dialog>
+</div>

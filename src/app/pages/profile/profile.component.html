@@ -1,0 +1,32 @@
+<div class="mx-4 wrap">
+  <div class="d-flex">
+    <kendo-avatar
+      [initials]="profileData.name | initials"
+      class="my-avatar"
+      size="large"
+      [imageSrc]="profileData.profileUrl"
+    ></kendo-avatar>
+    <div class="mx-2 my-auto">
+      <h6>{{ profileData.name | uppercase  }}</h6>
+      <p>{{ profileData.designation | lowercase }}</p>
+    </div>
+  </div>
+</div>
+
+<h4 class="d-flex mx-4 mt-4">{{ 'Personal Details:' | uppercase }}</h4>
+<div class="mx-4">
+  <h6>Name: {{ profileData.name }}</h6>
+  <h6>Email: {{ profileData.email }}</h6>
+  <h6>Designation: {{ profileData.designation }}</h6>
+</div>
+
+<h4 class="d-flex mx-4 mt-4">{{ 'Skills Details:' | uppercase }}</h4>
+<div class="mx-4">
+  <h6>Skills: {{ profileData.skills }}</h6>
+</div>
+
+<h4 class="d-flex mx-4 mt-4">{{ 'Contact Details:' | uppercase }}</h4>
+<div class="mx-4">
+  <h6>Address:</h6>
+  <h6>Phone Number: {{ profileData.phnNum }}</h6>
+</div>

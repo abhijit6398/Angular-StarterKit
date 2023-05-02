@@ -25,6 +25,7 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { TooltipsModule } from '@progress/kendo-angular-tooltip';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

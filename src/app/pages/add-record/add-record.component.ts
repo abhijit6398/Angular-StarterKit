@@ -47,6 +47,7 @@ export class AddRecordComponent {
   public demoItems: Array<string> = ["Architect", "Lead", "Sr.Engineer", "Engineer","Junior","Intern"];
 
   onSubmit(value:{}) {
+    console.log(value,'submit');
     console.log(this.contactForm.value, 'submit')
   }
 
@@ -67,15 +68,7 @@ export class AddRecordComponent {
       phoneNo: [''],
       skills: [''],
       designation: [''],
-    })
-    // console.log('After reset:', this.contactForm.value);
-
-    // // Reset the multiselect control
-    // const skillsMultiSelect = this.contactForm.get('skills');
-    // skillsMultiSelect.reset();
-    // skillsMultiSelect.setValue([]);
-    // skillsMultiSelect.markAsUntouched();
-  }
+    })}
 
   public close(status: string): void {
     console.log(`Dialog result: ${status}`)

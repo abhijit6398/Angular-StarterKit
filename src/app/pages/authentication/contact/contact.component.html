@@ -65,17 +65,16 @@
                   error="Error: Not valid email format"
                 ></app-custom-input>
                 <kendo-formfield>
-                    <kendo-label text="Questions">
-                        <kendo-textarea
-                            placeholder="Write here ..."
-                            [formControl]="contactusForm.controls.description"
-                            [rows]="4"
-                            resizable="none"
-                        >
-                        </kendo-textarea>
-                    </kendo-label>
-                    <kendo-formhint>Mention Your Query</kendo-formhint>
-                    <kendo-formerror>Error: Add Your Query</kendo-formerror>
+                  <kendo-label text="Questions">
+                    <kendo-textarea
+                      placeholder="Write here ..."
+                      [formControl]="contactusForm.controls.description"
+                      [rows]="4"
+                      resizable="none"
+                    ></kendo-textarea>
+                  </kendo-label>
+                  <kendo-formhint>Mention Your Query</kendo-formhint>
+                  <kendo-formerror>Error: Add Your Query</kendo-formerror>
                 </kendo-formfield>
               </div>
               <div class="query-button">

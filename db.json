@@ -1,29 +1,27 @@
 {
   "users": [
     {
-      "name": "abhi",
-      "phnNum": 1234567890,
+      "name": "abhi ram",
+      "phnNum": 9440544350,
       "email": "abc@gmail.com",
       "password": "Abc@1234",
       "cnfPassword": "123456789",
+      "designation": "Artictech",
+      "profileUrl": "https://demos.telerik.com/kendo-ui/content/web/Customers/GOURL.jpg",
+      "Role": "Admin",
       "id": 1,
-      "skills": [
-        "React",
-        "Angular"
-      ]
+      "skills": ["React", "Angular"]
     },
     {
       "name": "dinesh",
       "phnNum": 1234567890,
       "email": "xyz@gmail.com",
       "password": "12345678",
+      "Role": "User",
       "cnfPassword": "12345678",
+      "designation": "Jr.Engineer",
       "id": 2,
-      "skills": [
-        "React",
-        "Angular",
-        "Vue"
-      ]
+      "skills": ["React", "Angular", "Vue"]
     }
   ],
   "todos": [
@@ -43,13 +41,7 @@
       "description": "sgvhx dgd vdd h d d ghd"
     }
   ],
-  "skillsList": [
-    "Angular",
-    "React",
-    "Vue",
-    "Node",
-    "Python"
-  ],
+  "skillsList": ["Angular", "React", "Vue", "Node", "Python"],
   "contacts": [
     {
       "name": "abhi",
