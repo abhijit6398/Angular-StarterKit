@@ -35,7 +35,7 @@ import { ContactComponent } from './contact/contact.component';
     LayoutModule,
     RouterModule.forChild([
       {path:'login',component:LoginComponent },
-      {path:'home',component:HomeComponent},
+      {path:'',component:HomeComponent,pathMatch:'full'},
       {path:'about',component:AboutComponent},
       {path:'contact',component:ContactComponent}
     ])

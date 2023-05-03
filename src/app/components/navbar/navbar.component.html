@@ -13,7 +13,7 @@
     <!-- <h2>Portal</h2> -->
     <div class="logo-holder">
       <div class="logo">
-        <a routerLink="/home">
+        <a routerLink="/">
           <img class="image" src="https://www.wavelabs.ai/wp-content/themes/wavelabs/assets/images/header/logo.svg" alt="logo" />
         </a>
       </div>
@@ -25,7 +25,7 @@
   <kendo-appbar-section *ngIf="!authentiCated;then condition1 else condition2"></kendo-appbar-section>
   <ng-template #condition1>
     <ul type="none">
-      <li><a class="nav-link active" routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a class="nav-link active" routerLink="/" routerLinkActive="active">Home</a></li>
       <li><a routerLink="/about" routerLinkActive="active">About</a></li>
       <li><a routerLink="/contact" routerLinkActive="active">Contactus</a></li>
       <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
