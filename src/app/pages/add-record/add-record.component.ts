@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { FormBuilder } from '@angular/forms'
 import { HttpService } from 'src/app/Service/Http.service';
+import { AlertService } from 'src/app/Service/alert.service';
 @Component({
   selector: 'app-add-record',
   templateUrl: './add-record.component.html',
@@ -10,7 +11,7 @@ import { HttpService } from 'src/app/Service/Http.service';
 export class AddRecordComponent {
   public opened: boolean = false
   contactForm;
-  constructor(private formBuilder: FormBuilder, public api: HttpService) {
+  constructor(private formBuilder: FormBuilder, public apis: HttpService, private alert: AlertService) {
     this.contactForm = this.formBuilder.group({
       firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
       lastname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
@@ -40,8 +41,14 @@ export class AddRecordComponent {
   public demoItems: Array<string> = ["Architect", "Lead", "Sr.Engineer", "Engineer","Junior","Intern"];
 
   onSubmit() {
-    console.log(this.contactForm.value, 'submit');
-
+    this.contactForm.markAllAsTouched();
+    this.contactForm.markAsDirty();
+    if(this.contactForm.valid){
+      this.apis.usersPostApi(this.contactForm.value).subscribe((res)=>{
+        this.alert.displayNotification({type:'success', msg:'Sucessfully Created New User'});
+        this.contactForm.reset();
+      });
+    }
   }
 
   public handleValueChange(value: any): void {

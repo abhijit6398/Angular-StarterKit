@@ -10,7 +10,10 @@
       "profileUrl": "https://demos.telerik.com/kendo-ui/content/web/Customers/GOURL.jpg",
       "Role": "Admin",
       "id": 1,
-      "skills": ["React", "Angular"]
+      "skills": [
+        "React",
+        "Angular"
+      ]
     },
     {
       "name": "dinesh",
@@ -21,7 +24,24 @@
       "cnfPassword": "12345678",
       "designation": "Jr.Engineer",
       "id": 2,
-      "skills": ["React", "Angular", "Vue"]
+      "skills": [
+        "React",
+        "Angular",
+        "Vue"
+      ]
+    },
+    {
+      "firstname": "DInesh",
+      "lastname": "GOrla",
+      "email": "gorladineshyadav1@gmail.com",
+      "phoneNo": "94405443509",
+      "skills": [
+        "React",
+        "Angular",
+        "Node"
+      ],
+      "designation": "Engineer",
+      "id": 3
     }
   ],
   "todos": [
@@ -41,7 +61,13 @@
       "description": "sgvhx dgd vdd h d d ghd"
     }
   ],
-  "skillsList": ["Angular", "React", "Vue", "Node", "Python"],
+  "skillsList": [
+    "Angular",
+    "React",
+    "Vue",
+    "Node",
+    "Python"
+  ],
   "contacts": [
     {
       "name": "abhi",
