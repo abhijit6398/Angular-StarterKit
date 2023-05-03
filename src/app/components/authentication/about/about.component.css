@@ -47,8 +47,21 @@ CardComponent{
     justify-content: center;
     align-items: center;
 }
+
+kendo-tabstrip{
+    width: 90vw;
+}
+
 kendo-tabstrip p {
     margin: 0;
     padding: 8px;
     color: black !important;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 6rem;
 }
