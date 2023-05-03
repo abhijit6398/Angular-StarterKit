@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { GlobalService } from 'src/app/Service/Http.service';
+import { HttpService } from 'src/app/Service/Http.service';
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +17,7 @@ export class SignupComponent {
     cnfPassword: new FormControl("",Validators.compose([Validators.required,Validators.minLength(8)]))
   });
 
-  constructor(private apis : GlobalService,private route:Router){}
+  constructor(private apis : HttpService,private route:Router){}
 
   public submitForm(): void {
     this.registerForm.markAllAsTouched();

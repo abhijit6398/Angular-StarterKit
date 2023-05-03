@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
-import { GlobalService } from 'src/app/Service/Http.service'
+import { HttpService } from 'src/app/Service/Http.service'
 
 @Component({
   selector: 'app-dashbord',
@@ -11,7 +11,7 @@ export class DashbordComponent {
   gridData!: any
   skillsList!: any
   usersList!: any
-  constructor(private apis: GlobalService, private route: Router) {}
+  constructor(private apis: HttpService, private route: Router) {}
 
   ngOnInit() {
     this.apis.todosGetApi().subscribe((res) => {

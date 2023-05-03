@@ -2,7 +2,7 @@ import { Component } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { Subscription } from 'rxjs'
 import { AlertService } from 'src/app/Service/alert.service'
-import { GlobalService } from 'src/app/Service/Http.service'
+import { HttpService } from 'src/app/Service/Http.service'
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +11,7 @@ import { GlobalService } from 'src/app/Service/Http.service'
 })
 export class ContactComponent {
   private contactPostSubscription!: Subscription
-  constructor(private apis: GlobalService, private alert: AlertService) {}
+  constructor(private apis: HttpService, private alert: AlertService) {}
   contactusForm = new FormGroup({
     name: new FormControl('', Validators.compose([Validators.required])),
     email: new FormControl(

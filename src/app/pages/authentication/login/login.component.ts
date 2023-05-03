@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertService } from 'src/app/Service/alert.service';
-import { GlobalService } from 'src/app/Service/Http.service';
+import { HttpService } from 'src/app/Service/Http.service';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +13,7 @@ import { GlobalService } from 'src/app/Service/Http.service';
 export class LoginComponent {
   isAuthentication !: boolean;
   loadingPanelVisible:boolean = false;
-  constructor( private apis : GlobalService,private http : HttpClient,private router:Router, private alert:AlertService ){}
+  constructor( private apis : HttpService,private http : HttpClient,private router:Router, private alert:AlertService ){}
 
   public registerForm = new FormGroup({
     email: new FormControl("",Validators.compose([Validators.required,Validators.email,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])),

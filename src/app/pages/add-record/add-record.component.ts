@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { FormBuilder } from '@angular/forms'
+import { HttpService } from 'src/app/Service/Http.service';
 @Component({
   selector: 'app-add-record',
   templateUrl: './add-record.component.html',
@@ -9,7 +10,7 @@ import { FormBuilder } from '@angular/forms'
 export class AddRecordComponent {
   public opened: boolean = false
   contactForm;
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, public api: HttpService) {
     this.contactForm = this.formBuilder.group({
       firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
       lastname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
@@ -40,6 +41,7 @@ export class AddRecordComponent {
 
   onSubmit() {
     console.log(this.contactForm.value, 'submit');
+
   }
 
   public handleValueChange(value: any): void {
