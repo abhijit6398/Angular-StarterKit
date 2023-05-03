@@ -1,40 +1,41 @@
-<form  [formGroup]="registerForm" (ngSubmit)="submitForm()">
 <div class="main-container">
   <div class="sub-container">
     <div class="form-container">
       <h1>Log in</h1>
-      <div class="inputs">
-        <app-custom-input
-          className="input"
-          [control]="registerForm.controls.email"
-          label="Email"
-          type="text"
-          inputId="email"
-          hint="Your active email"
-          error="Error: Not valid email format"
-        ></app-custom-input>
-        <app-custom-input
-          className="input"
-          [control]="registerForm.controls.password"
-          label="Password"
-          type="password"
-          inputId="password"
-          hint="Your Password"
-          error="Error: Password incorrect"
-        ></app-custom-input>
-      </div>
-      <div>
-        <CustomButton
-          label="Submit"
-          themeColor="primary"
-          [type]="'submit'"
-        ></CustomButton>
-        <CustomButton
-          label="Clear"
-          themeColor="secondary"
-          (click)="clearForm()"
-        ></CustomButton>
-      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+        <div class="inputs">
+          <app-custom-input
+            className="input"
+            [control]="registerForm.controls.email"
+            label="Email"
+            type="text"
+            inputId="email"
+            hint="Your active email"
+            error="Error: Not valid email format"
+          ></app-custom-input>
+          <app-custom-input
+            className="input"
+            [control]="registerForm.controls.password"
+            label="Password"
+            type="password"
+            inputId="password"
+            hint="Your Password"
+            error="Error: Password incorrect"
+          ></app-custom-input>
+        </div>
+        <div>
+          <CustomButton
+            label="Submit"
+            themeColor="primary"
+            [type]="'submit'"
+          ></CustomButton>
+          <CustomButton
+            label="Clear"
+            themeColor="secondary"
+            (click)="clearForm()"
+          ></CustomButton>
+        </div>
+      </form>
     </div>
     <div class="overlay-container">
       <div class="overlay">
@@ -46,4 +47,3 @@
     </div>
   </div>
 </div>
-</form>
