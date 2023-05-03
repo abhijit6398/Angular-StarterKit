@@ -81,6 +81,7 @@
     label="Submit"
     themeColor="primary"
     [type]="'submit'"
+    [disabled] = "!contactForm.valid"
   ></CustomButton>
   <CustomButton
     label="Clear"

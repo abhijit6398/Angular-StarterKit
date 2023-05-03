@@ -10,5 +10,6 @@ export class CustomButtonComponent {
 @Input() type : string = "";
 @Input() label: string = "";
 @Input() themeColor: ButtonThemeColor = 'primary';
-@Input() customStyle: string = "col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12"
+@Input() customStyle: string = "col-md-5 col-12 col-lg-5 col-sm-12 col-xs-12";
+@Input() disabled: boolean = false;
 }

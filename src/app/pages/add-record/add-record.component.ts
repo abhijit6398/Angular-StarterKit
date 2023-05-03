@@ -11,9 +11,9 @@ export class AddRecordComponent {
   contactForm;
   constructor(private formBuilder: FormBuilder) {
     this.contactForm = this.formBuilder.group({
-      firstname: new FormControl('', [Validators.required]),
-      lastname: new FormControl('', [Validators.required]),
-      email: new FormControl('', [Validators.email]),
+      firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
+      lastname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
+      email: new FormControl('', Validators.compose([Validators.required,Validators.email,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])),
       phoneNo: new FormControl('', [Validators.required, Validators.pattern('^\\+?[0-9]{1,3}?[-. ]?\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$')]),
       skills: new FormControl<string[]>([]),
       designation: new FormControl('', [Validators.required]),
