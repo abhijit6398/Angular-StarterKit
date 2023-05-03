@@ -4,47 +4,72 @@
             <div class="content">
                 <h2>About</h2>
                 <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa deserunt
-                voluptatibus modi necessitatibus nulla ratione suscipit? Sed neque
-                nostrum nemo ea, dolorum eum velit. Maiores iure aperiam ea facere ut.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa deserunt
+                  voluptatibus modi necessitatibus nulla ratione suscipit? Sed neque
+                  nostrum nemo ea, dolorum eum velit. Maiores iure aperiam ea facere ut.
                 </p>
                 <div class="row">
-                    <div class="col-md-12 col-lg-6 d-flex flex-column col-sm-12">
-                        <h2 style="color: #3cdbe0;">Who We Are</h2>
-                        <p>We are a team of domain specialists, design practitioners, tech nerds, data scientists, product/platform developers and strategists building cutting-edge products, platforms and solutions in an agile and iterative development model.</p>
-                        <p>We specialize in innovation & research, launch new initiatives and help bring new offerings to market, improve quality of existing offering, sustain current generation & legacy offerings, support global deployment, engage in professional services, and bring innovation-led IT modernization.</p>
-                    </div>
-                    <div class="col-md-12 col-lg-6 col-sm-12 d-flex justify-content-center align-items-center">
-                        <kendo-card width="70%">
-                            <img kendoCardMedia src="https://dzi0imrau2wxz.cloudfront.net/wp-content/uploads/2022/10/Who-we-are.png" />
-                        </kendo-card>
-                    </div>
+                  <div class="col-md-12 col-lg-6 d-flex flex-column col-sm-12">
+                    <h2 style="color: #3cdbe0">Who We Are</h2>
+                    <p>
+                      We are a team of domain specialists, design practitioners, tech
+                      nerds, data scientists, product/platform developers and
+                      strategists building cutting-edge products, platforms and
+                      solutions in an agile and iterative development model.
+                    </p>
+                    <p>
+                      We specialize in innovation & research, launch new initiatives and
+                      help bring new offerings to market, improve quality of existing
+                      offering, sustain current generation & legacy offerings, support
+                      global deployment, engage in professional services, and bring
+                      innovation-led IT modernization.
+                    </p>
+                  </div>
+                  <div
+                    class="col-md-12 col-lg-6 col-sm-12 d-flex justify-content-center align-items-center"
+                  >
+                    <kendo-card width="70%">
+                      <img
+                        kendoCardMedia
+                        src="https://dzi0imrau2wxz.cloudfront.net/wp-content/uploads/2022/10/Who-we-are.png"
+                      />
+                    </kendo-card>
+                  </div>
                 </div>
                 <kendo-tabstrip>
-                    <kendo-tabstrip-tab>
-                        <ng-template kendoTabTitle>
-                            <h4>Tab 1 Title</h4>
-                        </ng-template>
-                        <ng-template kendoTabContent>
-                            <p>Tab 1 Content</p>
-                        </ng-template>
-                    </kendo-tabstrip-tab>
-                    <kendo-tabstrip-tab [selected]="true">
-                        <ng-template kendoTabTitle>
-                            <h4>Tab 2 Title</h4>
-                        </ng-template>
-                        <ng-template kendoTabContent>
-                            <p>Tab 2 Content</p>
-                        </ng-template>
-                    </kendo-tabstrip-tab>
-                    <kendo-tabstrip-tab>
-                        <ng-template kendoTabTitle>
-                            <h4>Tab 3 Title</h4>
-                        </ng-template>
-                        <ng-template kendoTabContent>
-                            <p>Tab 3 Content</p>
-                        </ng-template>
-                    </kendo-tabstrip-tab>
+                  <kendo-tabstrip-tab *ngFor="let item of data;let i = index" [selected]="i===0 && true">
+                    <ng-template kendoTabTitle>
+                      <span class="header">
+                        <img
+                          kendoCardMedia
+                          src= "{{item.tabIcon}}"
+                        />
+                        <h4>{{item.tabName}}</h4>
+                      </span>
+                    </ng-template>
+                    <ng-template kendoTabContent>
+                      <div class="row">
+                        <div class="col-md-12 col-lg-6 d-flex flex-column col-sm-12">
+                          <h4 style="color: #2a305b">
+                            {{item.contentHeading}}
+                          </h4>
+                          <p>
+                            {{item.description}}
+                          </p>
+                        </div>
+                        <div
+                          class="col-md-12 col-lg-6 col-sm-12 d-flex justify-content-center align-items-center"
+                        >
+                          <kendo-card width="70%">
+                            <img
+                              kendoCardMedia
+                              src="{{item.image}}"
+                            />
+                          </kendo-card>
+                        </div>
+                      </div>
+                    </ng-template>
+                  </kendo-tabstrip-tab>
                 </kendo-tabstrip>
             </div>
         </div>
