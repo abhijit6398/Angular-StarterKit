@@ -1,8 +1,8 @@
 import { Component } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { Subscription } from 'rxjs'
-import { AlertService } from 'src/app/Service/alert.service'
-import { HttpService } from 'src/app/Service/Http.service'
+import { AlertService } from 'src/app/services/Alert.service'
+import { HttpService } from 'src/app/services/Http.service'
 
 @Component({
   selector: 'app-contact',

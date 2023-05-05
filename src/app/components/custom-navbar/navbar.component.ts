@@ -9,8 +9,8 @@ import {
 } from '@angular/core'
 import { Router } from '@angular/router'
 import { DrawerComponent } from '@progress/kendo-angular-layout'
-import { AlertService } from 'src/app/Service/alert.service'
-import { NavbarService } from 'src/app/Service/navbar.service'
+import { AlertService } from 'src/app/services/Alert.service'
+import { NavbarService } from 'src/app/services/navbar.service' 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

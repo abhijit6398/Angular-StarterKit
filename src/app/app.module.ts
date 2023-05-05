@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './components/custom-navbar/navbar.component';
 
 import { LayoutModule } from "@progress/kendo-angular-layout";
 import { NavigationModule } from "@progress/kendo-angular-navigation";
@@ -20,7 +20,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { InputsModule } from "@progress/kendo-angular-inputs";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
 import { NotificationModule } from '@progress/kendo-angular-notification';
-import { SharedModule } from './components/shared/shared.module';
+import { CustomModule } from './components/custom.module';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { TooltipsModule } from '@progress/kendo-angular-tooltip';
 
@@ -48,7 +48,7 @@ import { TooltipsModule } from '@progress/kendo-angular-tooltip';
     ButtonsModule,
     InputsModule,
     NotificationModule,
-    SharedModule,
+    CustomModule,
     IndicatorsModule,
     TooltipsModule
   ],

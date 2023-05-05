@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertService } from 'src/app/Service/alert.service';
-import { HttpService } from 'src/app/Service/Http.service';
+import { AlertService } from 'src/app/services/Alert.service';
+import { HttpService } from 'src/app/services/Http.service';
 
 @Component({
   selector: 'app-login',

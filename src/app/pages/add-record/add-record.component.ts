@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core'
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { FormBuilder } from '@angular/forms'
-import { HttpService } from 'src/app/Service/Http.service';
-import { AlertService } from 'src/app/Service/alert.service';
+import { HttpService } from 'src/app/services/Http.service';
+import { AlertService } from 'src/app/services/Alert.service';
 @Component({
   selector: 'app-add-record',
   templateUrl: './add-record.component.html',
@@ -16,8 +16,9 @@ export class AddRecordComponent {
       firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
       lastname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
       email: new FormControl('', Validators.compose([Validators.required,Validators.email,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])),
-      phoneNo: new FormControl('', [Validators.required, Validators.pattern('^\\+?[0-9]{1,3}?[-. ]?\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$')]),
+      phoneNo: new FormControl('', [Validators.required, Validators.pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)]),
       skills: new FormControl<string[]>([]),
+      profileUrl: new FormControl(''),
       designation: new FormControl('', [Validators.required]),
     });
   }
@@ -44,7 +45,8 @@ export class AddRecordComponent {
     this.contactForm.markAllAsTouched();
     this.contactForm.markAsDirty();
     if(this.contactForm.valid){
-      this.apis.usersPostApi(this.contactForm.value).subscribe((res)=>{
+      const data = {...this.contactForm.value, 'password':'Wavelabs@1234','name': `${this.contactForm.value.firstname} ${this.contactForm.value.lastname}`}
+      this.apis.usersPostApi(data).subscribe((res)=>{
         this.alert.displayNotification({type:'success', msg:'Sucessfully Created New User'});
         this.contactForm.reset();
       });

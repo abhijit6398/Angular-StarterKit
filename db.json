@@ -42,6 +42,22 @@
       ],
       "designation": "Engineer",
       "id": 3
+    },
+    {
+      "firstname": "GORLA",
+      "lastname": "DINESH",
+      "email": "gorladineshyadav1@gmail.com",
+      "phoneNo": "9440544350",
+      "skills": [
+        "React",
+        "Angular",
+        "Node"
+      ],
+      "profileUrl": "",
+      "designation": "Junior",
+      "password": "Wavelabs@1234",
+      "name": "GORLA DINESH",
+      "id": 4
     }
   ],
   "todos": [

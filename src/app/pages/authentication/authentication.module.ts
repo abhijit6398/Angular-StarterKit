@@ -8,12 +8,12 @@ import { LabelModule } from "@progress/kendo-angular-label";
 import { ButtonsModule } from "@progress/kendo-angular-buttons";
 import { IconsModule } from '@progress/kendo-angular-icons';
 import { LayoutModule } from "@progress/kendo-angular-layout";
-import {SharedModule} from '../../components/shared/shared.module';
-import { LoaderComponentComponent } from 'src/app/components/loader-component/loader-component.component';
+import { LoaderComponentComponent } from 'src/app/components/custom-loaderComponent/loader-component.component';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { CustomModule } from 'src/app/components/custom.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { ContactComponent } from './contact/contact.component';
     InputsModule,
     LabelModule,
     ButtonsModule,
-    SharedModule,
+    CustomModule,
     IndicatorsModule,
     IconsModule,
     LayoutModule,
