@@ -1,9 +1,3 @@
-<CustomModal
-  msg="Are you sure you want to Signout?"
-  [opened]="opened"
-  (closeModal)="closeModal($event)"
-  (saveData)="signOut($event)"
-></CustomModal>
 <kendo-appbar
   position="top"
   [ngClass]="{
@@ -15,17 +9,17 @@
     kendoButton
     fillMode="flat"
     *ngIf="auth && sidebarMode === 'overlay'"
-    (click)="sideNav.toggle()"
+    (click)="sidenav.toggle()"
   >
-    <kendo-icon name="menu"></kendo-icon>
-    <!-- <kendo-icon *ngIf="expanded" name="close"></kendo-icon>*ngIf="!expanded"-->
+    <kendo-icon *ngIf="!sidenav.expanded" name="menu"></kendo-icon>
+    <kendo-icon *ngIf="sidenav.expanded" name="close"></kendo-icon>
   </button>
   <kendo-appbar-spacer width="1px"></kendo-appbar-spacer>
   <kendo-appbar-section>
     <!-- <h2>Portal</h2> -->
-    <div class="logo-holder">
+    <div *ngIf="!expand" class="logo-holder">
       <div class="logo">
-        <a routerLink="/">
+        <a [routerLink]="auth ? '/dashbord' : '/'" >
           <img
             class="image"
             src="https://www.wavelabs.ai/wp-content/themes/wavelabs/assets/images/header/logo.svg"
@@ -87,3 +81,10 @@
     </div>
   </ng-template>
 </kendo-appbar>
+
+<CustomModal
+  msg="Are you sure you want to Signout?"
+  [opened]="opened"
+  (closeModal)="closeModal($event)"
+  (saveData)="signOut($event)"
+></CustomModal>

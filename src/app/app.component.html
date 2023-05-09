@@ -1,10 +1,12 @@
 <!-- Top Navigation Bar -->
-<app-navbar [auth]="auth"></app-navbar>
+<div *ngIf="!auth">
+    <app-navbar [auth]="auth"></app-navbar>
+</div>
 
 <!-- Side Navigation Bar -->
 <span *ngIf="auth; then cond1; else cond2"></span>
 <ng-template #cond1>
-    <app-sidebar></app-sidebar>
+    <app-sidebar [auth]="auth"></app-sidebar>
 </ng-template>
 <ng-template #cond2>
     <div class="main-container">
