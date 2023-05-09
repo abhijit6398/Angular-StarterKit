@@ -14,6 +14,19 @@
       (select)="onSelect($event)"
       [animation]="{ type: 'slide', duration: 400 }"
     >
+      <ng-template kendoDrawerHeaderTemplate>
+        <div *ngIf="sidenav.expanded" class="header">
+          <div class="logo">
+            <a routerLink="/">
+              <img
+                class="image"
+                src="https://www.wavelabs.ai/wp-content/themes/wavelabs/assets/images/header/logo.svg"
+                alt="logo"
+              />
+            </a>
+          </div>
+        </div>
+      </ng-template>
       <div *ngIf="!sidenav.expanded">
         <ng-template kendoDrawerItemTemplate let-item let-expanded="expanded">
           <div kendoTooltip [title]="item.text">
@@ -46,6 +59,7 @@
     <!-- Main Content Area -->
     <kendo-drawer-content>
       <div class="content">
+        <app-navbar [auth]="auth" [expand]="sidenav.expanded" [sidenav]="sidenav"></app-navbar>
         <router-outlet></router-outlet>
       </div>
     </kendo-drawer-content>

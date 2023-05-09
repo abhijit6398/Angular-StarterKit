@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core'
+import { Component, Input, ViewChild } from '@angular/core'
 import {
   DrawerComponent,
   DrawerItem,
@@ -16,6 +16,7 @@ import { BreakpointObserver } from '@angular/cdk/layout'
 })
 export class SidebarComponent {
   @ViewChild(DrawerComponent) sideNav!: DrawerComponent
+  @Input() auth: any;
 
   public selected = 'Inbox'
   public expandedIndices = [2]
