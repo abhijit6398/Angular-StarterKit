@@ -25,7 +25,23 @@ export class SidebarComponent {
   isItemExpanded: DrawerItemExpandedFn = (item): boolean => {
     return this.expandedIndices.indexOf(item.id) >= 0
   }
-  constructor(private route: Router, private observer: BreakpointObserver) {}
+  constructor(private route: Router, private observer: BreakpointObserver) {
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    // const xyz = this.items.filter((x: any): void => {
+    //   if (x?.role === user?.role) {
+    //     // if (this.auth?.role === this.user.role ) {
+    //     return x
+    //     // }
+    //   } else {
+    //     return x
+    //   }
+    // })
+    this.items = this.items.filter((item:any) => {
+      if(item.role === user.Role) {
+        return item
+      }
+    } );
+  }
 
   ngAfterViewInit() {
     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {

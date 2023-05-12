@@ -27,6 +27,7 @@ export class LoginComponent {
       if(res.find((x: { email: any; password:any; }) =>x.email === this.registerForm.value.email && x.password === this.registerForm.value.password)){
         let data = res.filter((x:any):void => {
           if(x.email === this.registerForm.value.email && x.password === this.registerForm.value.password){
+            localStorage.setItem('user',JSON.stringify(x));
             return x;
           }
         });

@@ -4,28 +4,29 @@ export const items = [
     text: "Home",
     icon: "home",
     selected: true,
-    url: "/dashbord"
-  },
-  {
-    separator: true,
+    url: "/dashbord",
+    role: "User",
   },
   {
     id:2,
     text: "Users List",
     icon: "myspace",
-    url: "/list"
+    url: "/list",
+    role: "Admin",
   },
   {
     text: "Add New User",
     icon: "file-add",
     id: 3,
-    url: "/addrecord"
+    url: "/addrecord",
+    role: "Admin",
   },
   {
     text: "User Profile",
     icon: "user",
     id: 4,
-    url: "/profile"
+    url: "/profile",
+    role: "User",
   },
 
   // {

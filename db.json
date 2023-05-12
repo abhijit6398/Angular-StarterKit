@@ -41,7 +41,8 @@
         "Node"
       ],
       "designation": "Engineer",
-      "id": 3
+      "id": 3,
+      "Role": "User"
     }
   ],
   "todos": [
