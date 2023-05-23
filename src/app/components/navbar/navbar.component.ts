@@ -89,6 +89,8 @@ export class NavbarComponent {
 
   signOut(data: boolean): void {
     localStorage.removeItem('auth');
+    localStorage.removeItem('user');
+    localStorage.removeItem('details');
     this.opened = data;
     this.route.navigate(['/login']);
     this.alertService.displayNotification({

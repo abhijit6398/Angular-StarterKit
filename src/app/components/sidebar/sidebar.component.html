@@ -17,7 +17,7 @@
       <ng-template kendoDrawerHeaderTemplate>
         <div *ngIf="sidenav.expanded" class="header">
           <div class="logo">
-            <a routerLink="/">
+            <a [routerLink]="auth ? '/dashbord' : '/'" >
               <img
                 class="image"
                 src="https://www.wavelabs.ai/wp-content/themes/wavelabs/assets/images/header/logo.svg"
