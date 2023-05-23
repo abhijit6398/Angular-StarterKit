@@ -13,12 +13,13 @@ export class AddRecordComponent {
   contactForm;
   constructor(private formBuilder: FormBuilder, public apis: HttpService, private alert: AlertService) {
     this.contactForm = this.formBuilder.group({
-      firstname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
-      lastname: new FormControl('', Validators.compose([Validators.required, Validators.minLength(5)])),
+      firstname: new FormControl('', Validators.compose([Validators.required])),
+      lastname: new FormControl('', Validators.compose([Validators.required])),
       email: new FormControl('', Validators.compose([Validators.required,Validators.email,Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])),
-      phoneNo: new FormControl('', [Validators.required, Validators.pattern('^\\+?[0-9]{1,3}?[-. ]?\\(?[0-9]{3}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$')]),
+      phnNum: new FormControl('', [Validators.required, Validators.pattern('^\\+?[0-9]{1,3}?[-. ]?\\(?[0-9]{2}\\)?[-. ]?[0-9]{3}[-. ]?[0-9]{4}$')]),
       skills: new FormControl<string[]>([]),
       designation: new FormControl('', [Validators.required]),
+      Role: new FormControl('', [Validators.required]),
     });
   }
 
@@ -39,12 +40,51 @@ export class AddRecordComponent {
   ]
 
   public demoItems: Array<string> = ["Architect", "Lead", "Sr.Engineer", "Engineer","Junior","Intern"];
+  public roleItems: Array<string> = ["Admin", "User"];
+
+  generatePassword() {
+    const length = 8;
+    const uppercaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const lowercaseLetters = 'abcdefghijklmnopqrstuvwxyz';
+    const numbers = '0123456789';
+    const symbols = '!@$%^&(){}[]';
+    
+    let password = '';
+    
+    // Generate random uppercase letter as the first character
+    password += uppercaseLetters.charAt(Math.floor(Math.random() * uppercaseLetters.length));
+    
+    // Generate random lowercase letter
+    password += lowercaseLetters.charAt(Math.floor(Math.random() * lowercaseLetters.length));
+    
+    // Generate random number
+    password += numbers.charAt(Math.floor(Math.random() * numbers.length));
+    
+    // Generate random symbol
+    password += symbols.charAt(Math.floor(Math.random() * symbols.length));
+    
+    // Generate remaining random characters
+    const remainingLength = length - 4;
+    const allCharacters = uppercaseLetters + lowercaseLetters + numbers + symbols;
+    
+    for (let i = 0; i < remainingLength; i++) {
+      password += allCharacters.charAt(Math.floor(Math.random() * allCharacters.length));
+    }
+    
+    // Shuffle the password characters
+    password = password.split('').sort(function(){return 0.5-Math.random()}).join('');
+    
+    return password;
+  }
 
   onSubmit() {
     this.contactForm.markAllAsTouched();
     this.contactForm.markAsDirty();
     if(this.contactForm.valid){
-      this.apis.usersPostApi(this.contactForm.value).subscribe((res)=>{
+      let formValue:any = this.contactForm.value;
+      formValue['password'] = this.generatePassword();
+      formValue['name'] = formValue['firstname'] + ' ' + formValue['lastname'];
+      this.apis.usersPostApi(formValue).subscribe((res)=>{
         this.alert.displayNotification({type:'success', msg:'Sucessfully Created New User'});
         this.contactForm.reset();
       });

@@ -15,12 +15,14 @@ import { DropDownsModule } from "@progress/kendo-angular-dropdowns";
 import { ProfileComponent } from './profile/profile.component';
 import { LayoutModule } from "@progress/kendo-angular-layout";
 import { InitialsPipe } from '../Custom Pipes/initials.pipe';
+import { UsersComponent } from './users/users.component';
 @NgModule({
   declarations: [
     DashbordComponent,
     AddRecordComponent,
     ProfileComponent,
-    InitialsPipe
+    InitialsPipe,
+    UsersComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { InitialsPipe } from '../Custom Pipes/initials.pipe';
     RouterModule.forChild([
       {path:'dashbord',component:DashbordComponent,canActivate:[AuthGuard], pathMatch:'full' },
       {path:'addrecord',component:AddRecordComponent,canActivate:[AuthGuard]},
+      {path:'users',component:UsersComponent,canActivate:[AuthGuard]},
       {path:'profile', component: ProfileComponent, canActivate:[AuthGuard]},
       { path: '**', component: NotFoundPageComponent }
     ])

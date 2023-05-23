@@ -7,9 +7,9 @@ import { Component } from '@angular/core'
 })
 export class ProfileComponent { 
   public profileData: any = localStorage.getItem('details')
-  constructor() {
-    console.log(JSON.parse(this.profileData).name, 'name')
-  }
+  // constructor() {
+  //   console.log(JSON.parse(this.profileData).firstname, 'name')
+  // }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.

@@ -34,6 +34,7 @@
       "firstname": "DInesh",
       "lastname": "GOrla",
       "email": "gorladineshyadav1@gmail.com",
+      "password": "Gorla@1234",
       "phoneNo": "94405443509",
       "skills": [
         "React",
@@ -43,6 +44,20 @@
       "designation": "Engineer",
       "id": 3,
       "Role": "User"
+    },
+    {
+      "firstname": "abhisek",
+      "lastname": "Dash",
+      "email": "usertest2@gmail.com",
+      "phnNum": "1234567890",
+      "skills": [
+        "Python"
+      ],
+      "designation": "Architect",
+      "Role": "User",
+      "password": "5xwP3(]G",
+      "name": "abhisek Dash",
+      "id": 4
     }
   ],
   "todos": [

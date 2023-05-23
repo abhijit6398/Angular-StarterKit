@@ -1,92 +1,103 @@
-<h3 style="text-align: center;">Add New Employee...</h3>
-<form  [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-<div class="form-row">
-  <app-custom-input
-    class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
-    [control]="contactForm.controls.firstname"
-    controlName="firstname"
-    label="First Name"
-    type="text"
-    inputId="firstname"
-    hint="Your First Name"
-    error="Error: invalid Name"
-  ></app-custom-input>
-  <app-custom-input
-    controlName="lastname"
-    [control]="contactForm.controls.lastname"
-    class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
-    label="Last Name"
-    type="text"
-    inputId="lastname"
-    hint="Your lastname"
-    error="Error: Not valid!"
-  ></app-custom-input>
-</div>
-<div class="form-row">
-  <app-custom-input
-    controlName="email"
-    [control]="contactForm.controls.email"
-    class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
-    label="Email"
-    type="text"
-    inputId="email"
-    hint="Your active email"
-    error="Error: Not valid email format"
-  ></app-custom-input>
-  <app-custom-input
-    controlName="phoneNo"
-    [control]="contactForm.controls.phoneNo"
-    class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
-    label="Phone No"
-    type="number"
-    inputId="phoneNo"
-    hint="Employee Active Phone Number"
-    error="Error: Not valid Phone Number"
-  ></app-custom-input>
-</div>
-<div class="form-row">
-  <div class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1">
-    <kendo-label 
-     for="designation" text="Designation">
-    <kendo-dropdownlist
-      [data]="demoItems"
-      textField="title"
-      valueField="title"
-      [valuePrimitive]="true"
-      [defaultItem]="{ title: 'Select a designation' }"
-      style="background-color: #ffffff;"
-      [formControl]="contactForm.controls.designation"
-      id="designation"
-    >
-    </kendo-dropdownlist>
-  </kendo-label>
+<h3 style="text-align: center">Add New Employee...</h3>
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <app-custom-input
+      class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
+      [control]="contactForm.controls.firstname"
+      controlName="firstname"
+      label="First Name"
+      type="text"
+      inputId="firstname"
+      hint="Your First Name"
+      error="Error: invalid Name"
+    ></app-custom-input>
+    <app-custom-input
+      controlName="lastname"
+      [control]="contactForm.controls.lastname"
+      class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
+      label="Last Name"
+      type="text"
+      inputId="lastname"
+      hint="Your lastname"
+      error="Error: Not valid!"
+    ></app-custom-input>
   </div>
+  <div class="form-row">
+    <app-custom-input
+      controlName="email"
+      [control]="contactForm.controls.email"
+      class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
+      label="Email"
+      type="text"
+      inputId="email"
+      hint="Your active email"
+      error="Error: Not valid email format"
+    ></app-custom-input>
+    <app-custom-input
+      controlName="phnNum"
+      [control]="contactForm.controls.phnNum"
+      class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1"
+      label="Phone No"
+      type="number"
+      inputId="phoneNo"
+      hint="Employee Active Phone Number"
+      error="Error: Not valid Phone Number"
+    ></app-custom-input>
+  </div>
+  <div class="form-row">
     <div class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1">
-      <kendo-label
-    for="skills"
-    text="Skill Set:"
-  >
-    <kendo-multiselect
-      formControlName="skills"
-      [data]="listItems"
-      (valueChange)="handleValueChange($event)"
-    ></kendo-multiselect>
-  </kendo-label>
+      <kendo-label for="designation" text="Designation">
+        <kendo-dropdownlist
+          [data]="demoItems"
+          textField="title"
+          valueField="title"
+          [valuePrimitive]="true"
+          [defaultItem]="{ title: 'Select a designation' }"
+          style="background-color: #ffffff"
+          [formControl]="contactForm.controls.designation"
+          id="designation"
+        >
+        </kendo-dropdownlist>
+      </kendo-label>
     </div>
-  
-
-</div>
-<div style="margin: 1rem;">
-  <CustomButton
-    label="Submit"
-    themeColor="primary"
-    [type]="'submit'"
-    [disabled] = "!contactForm.valid"
-  ></CustomButton>
-  <CustomButton
-    label="Clear"
-    themeColor="secondary"
-    (click)="onClear()"
-  ></CustomButton>
-</div>
+    <div class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1">
+      <kendo-label for="skills" text="Skill Set:">
+        <kendo-multiselect
+          formControlName="skills"
+          [data]="listItems"
+          (valueChange)="handleValueChange($event)"
+        ></kendo-multiselect>
+      </kendo-label>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 col-12 col-lg-6 col-sm-12 col-xs-12 m-1">
+      <kendo-label for="role" text="Role">
+        <kendo-dropdownlist
+          [data]="roleItems"
+          textField="title"
+          valueField="title"
+          [valuePrimitive]="true"
+          [defaultItem]="{ title: 'Select a Role' }"
+          style="background-color: #ffffff"
+          [formControl]="contactForm.controls.Role"
+          id="role"
+        >
+        </kendo-dropdownlist>
+      </kendo-label>
+    </div>
+  </div>
+  <div style="margin: 1rem">
+    <CustomButton
+      label="Submit"
+      themeColor="primary"
+      [type]="'submit'"
+      [disabled]="!contactForm.valid"
+    ></CustomButton>
+    <CustomButton
+      label="Clear"
+      themeColor="secondary"
+      (click)="onClear()"
+    ></CustomButton>
+  </div>
 </form>
