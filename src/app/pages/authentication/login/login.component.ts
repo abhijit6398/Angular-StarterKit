@@ -35,7 +35,11 @@ export class LoginComponent {
         this.alert.displayNotification({type:'success', msg:'user sucessfully logged in....'})
         localStorage.setItem('auth',JSON.stringify(true));
         localStorage.setItem('details', JSON.stringify(data[0]));
-        this.router.navigate(['/dashbord']);
+        if(data[0].Role === 'Admin'){
+          this.router.navigate(['/dashbord']);
+        }else{
+          this.router.navigate(['/home']);
+        }
       } else {
         this.loadingPanelVisible = false;
         this.alert.displayNotification({type:'error',msg:'something went wrong'});
